@@ -11,8 +11,8 @@
         </div>
         <div class="breadcrumb-wrap">
             <ol class="breadcrumb">
-                <li><a href="/">HOME</a></li>
-                <li><a href="/category">lifestyle</a></li>
+                <li><a href="<?= site_url(); ?>">HOME</a></li>
+                <li><a href="<?= site_url(); ?>/category">lifestyle</a></li>
                 <li class="active">news in details</li>
             </ol>
         </div>
@@ -21,20 +21,24 @@
                 <div class="row">
                     <div class="col-md-8">
                         <article class="post post-full clearfix">
-                            <div class="entry-media"><a href="assets/media/content/post/750x400/1.jpg"
-                                    class="prettyPhoto"><img src="assets/media/content/post/750x400/1.jpg" alt="Foto"
+                            <div class="entry-media"><a
+                                    href="<?= base_url(); ?>/assets/media/content/post/750x400/1.jpg"
+                                    class="prettyPhoto"><img
+                                        src="<?= base_url(); ?>/assets/media/content/post/750x400/1.jpg" alt="Foto"
                                         class="img-responsive"></a></div>
                             <div class="entry-main">
                                 <div class="entry-header"><span class="label bg-3">lifestyle</span><span
                                         class="label bg-5">world</span>
-                                    <h2 class="entry-title"><a href="/detail">Lorem ipsum dolor amt elit sed
+                                    <h2 class="entry-title"><a href="<?= site_url(); ?>/detail">Lorem ipsum dolor amt
+                                            elit sed
                                             tempor incidunt</a></h2>
                                 </div>
-                                <div class="entry-meta"><span class="entry-meta__item">By<a href="/detail"
-                                            class="entry-meta__link"> john sina</a></span><span
-                                        class="entry-meta__item"><a href="/detail" class="entry-meta__link">feb 30,
+                                <div class="entry-meta"><span class="entry-meta__item">By<a
+                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
+                                            sina</a></span><span class="entry-meta__item"><a
+                                            href="<?= site_url(); ?>/detail" class="entry-meta__link">feb 30,
                                             2016</a></span><span class="entry-meta__item"><i
-                                            class="icon pe-7s-comment"></i><a href="/detail"
+                                            class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
                                             class="entry-meta__link">23</a></span></div>
                                 <div class="entry-content">
                                     <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod tempor
@@ -72,7 +76,8 @@
                                         iste natus error sit voluptatem accusantium doloremque.</p>
                                     <div class="post-full__col">
                                         <div class="row">
-                                            <div class="col-md-6"><img src="assets/media/content/post/360x230/1.jpg"
+                                            <div class="col-md-6"><img
+                                                    src="<?= base_url(); ?>/assets/media/content/post/360x230/1.jpg"
                                                     alt="foto" class="img-responsive"></div>
                                             <div class="col-md-6">
                                                 <p>Tempor incididunt labore et dolore magna aliqua enimad minim veniam
@@ -91,9 +96,9 @@
                                 </div>
                                 <div class="entry-footer clearfix">
                                     <div class="post-tags"><span class="post-tags__title">tags :</span><a
-                                            href="/category" class="post-tags__link"> Movies,</a><a href="/category"
-                                            class="post-tags__link"> Fashion,</a><a href="/category"
-                                            class="post-tags__link"> Health</a></div>
+                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Movies,</a><a
+                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Fashion,</a><a
+                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Health</a></div>
                                     <ul class="social-links social-links_mod-a list-inline">
                                         <li class="bg-14"><a href="facebook.com" class="social-links__item_link"><i
                                                     class="icon fa fa-facebook"></i></a></li>
@@ -114,7 +119,8 @@
                             </div>
                         </article>
                         <article class="author-post clearfix">
-                            <div class="author-post__img"><img src="assets/media/content/post/author/1.jpg" alt="foto"
+                            <div class="author-post__img"><img
+                                    src="<?= base_url(); ?>/assets/media/content/post/author/1.jpg" alt="foto"
                                     class="img-responsive"></div>
                             <div class="author-post__inner">
                                 <h2 class="author-post__title">Authoor:<span class="author-post__name"> samir
@@ -147,8 +153,8 @@
                                 <li>
                                     <article class="comment clearfix">
                                         <div class="avatar-placeholder"><img
-                                                src="assets/media/content/post/reviews/1.jpg" alt="avatar"
-                                                class="img-responsive"></div>
+                                                src="<?= base_url(); ?>/assets/media/content/post/reviews/1.jpg"
+                                                alt="avatar" class="img-responsive"></div>
                                         <div class="comment-inner">
                                             <header class="comment-header">
                                                 <cite class="comment-author">don jeans</cite>
@@ -159,7 +165,7 @@
                                                     incididunt labore dolore magna aliqu enimad min incididunt ut labore
                                                     et dolore sed.</p>
                                             </div>
-                                            <footer class="comment-footer"><a href="/"
+                                            <footer class="comment-footer"><a href="<?= site_url(); ?>"
                                                     class="comment-btn btn btn-default btn-effect">reply</a></footer>
                                         </div>
                                     </article>
@@ -167,8 +173,8 @@
                                         <li>
                                             <article class="comment clearfix">
                                                 <div class="avatar-placeholder"><img
-                                                        src="assets/media/content/post/reviews/2.jpg" alt="avatar"
-                                                        class="img-responsive"></div>
+                                                        src="<?= base_url(); ?>/assets/media/content/post/reviews/2.jpg"
+                                                        alt="avatar" class="img-responsive"></div>
                                                 <div class="comment-inner">
                                                     <header class="comment-header">
                                                         <cite class="comment-author">mark waugh</cite>
@@ -180,7 +186,7 @@
                                                             tempor incidid magna aliqu enimad min incididunt labore
                                                             dolore sed.</p>
                                                     </div>
-                                                    <footer class="comment-footer"><a href="/"
+                                                    <footer class="comment-footer"><a href="<?= site_url(); ?>"
                                                             class="comment-btn btn btn-default btn-effect">reply</a>
                                                     </footer>
                                                 </div>
@@ -191,8 +197,8 @@
                                 <li>
                                     <article class="comment clearfix">
                                         <div class="avatar-placeholder"><img
-                                                src="assets/media/content/post/reviews/3.jpg" alt="avatar"
-                                                class="img-responsive"></div>
+                                                src="<?= base_url(); ?>/assets/media/content/post/reviews/3.jpg"
+                                                alt="avatar" class="img-responsive"></div>
                                         <div class="comment-inner">
                                             <header class="comment-header">
                                                 <cite class="comment-author">suzain liza</cite>
@@ -203,7 +209,7 @@
                                                     incididunt labore dolore magna aliqu enimad min incididunt ut labore
                                                     et dolore sed.</p>
                                             </div>
-                                            <footer class="comment-footer"><a href="/"
+                                            <footer class="comment-footer"><a href="<?= site_url(); ?>"
                                                     class="comment-btn btn btn-default btn-effect">reply</a></footer>
                                         </div>
                                     </article>
@@ -242,142 +248,13 @@
                                 </form>
                             </div>
                             <section class="widget">
-                                <h2 class="widget-title ui-title-inner text-right">follow us</h2>
-                                <div class="decor-right"></div>
-                                <div class="widget-content">
-                                    <ul class="list-subscription list-unstyled">
-                                        <li class="list-subscription__item bg-11"><span
-                                                class="list-subscription__name">Rss</span><span
-                                                class="list-subscription__number">164.983</span> followers<a
-                                                href="rss.com" class="list-subscription__link"><i
-                                                    class="icon fa fa-rss"></i></a></li>
-                                        <li class="list-subscription__item bg-8"><span
-                                                class="list-subscription__name">TW</span><span
-                                                class="list-subscription__number">714,967</span> followers<a
-                                                href="twitter.com" class="list-subscription__link"><i
-                                                    class="icon fa fa-twitter"></i></a></li>
-                                        <li class="list-subscription__item bg-9"><span
-                                                class="list-subscription__name">FB</span><span
-                                                class="list-subscription__number">250,642</span> likes<a
-                                                href="facebook.com" class="list-subscription__link"><i
-                                                    class="icon fa fa-facebook"></i></a></li>
-                                        <li class="list-subscription__item bg-10"><span
-                                                class="list-subscription__name">yt</span><span
-                                                class="list-subscription__number">920,497</span> subscribers<a
-                                                href="youtube.com" class="list-subscription__link"><i
-                                                    class="icon fa fa-youtube-play"></i></a></li>
-                                    </ul>
-                                </div>
+                                <?= $this->include('partials/follow-us'); ?>
                             </section>
                             <section class="widget">
-                                <h2 class="widget-title ui-title-inner text-right">categories</h2>
-                                <div class="decor-right"></div>
-                                <div class="widget-content">
-                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                        <li><a href="/category">fashion & lifestyle</a></li>
-                                        <li><a href="/category">World politics</a></li>
-                                        <li><a href="/category">entertainment News</a></li>
-                                        <li><a href="/category">music & videos</a></li>
-                                        <li><a href="/category">fun & funny moments</a></li>
-                                    </ul>
-                                </div>
+                                <?= $this->include('partials/categories'); ?>
                             </section>
                             <section class="widget">
-                                <h2 class="widget-title ui-title-inner text-right">popular news</h2>
-                                <div class="decor-right"></div>
-                                <div class="widget-content">
-                                    <article class="post post-3 post-3_mod-a clearfix">
-                                        <div class="entry-media"><a href="assets/media/content/post/100x100/1.jpg"
-                                                class="prettyPhoto"><img src="assets/media/content/post/100x100/1.jpg"
-                                                    alt="Foto" class="img-responsive" /></a></div>
-                                        <div class="entry-main">
-                                            <div class="entry-header">
-                                                <h2 class="entry-title"><a href="/detail">Incididunt ulabore
-                                                        dolore malnu alikua</a></h2>
-                                            </div>
-                                            <div class="entry-meta"><span
-                                                    class="category color-4">entertainment</span><span
-                                                    class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                        href="/detail" class="entry-meta__link">6</a></span>
-                                            </div>
-                                        </div>
-                                    </article>
-                                    <article class="post post-3 post-3_mod-a clearfix">
-                                        <div class="entry-media"><a href="assets/media/content/post/100x100/2.jpg"
-                                                class="prettyPhoto"><img src="assets/media/content/post/100x100/2.jpg"
-                                                    alt="Foto" class="img-responsive" /></a></div>
-                                        <div class="entry-main">
-                                            <div class="entry-header">
-                                                <h2 class="entry-title"><a href="/detail">Aliquip exea comod
-                                                        rure nsekuat duis</a></h2>
-                                            </div>
-                                            <div class="entry-meta"><span class="category color-7">health</span><span
-                                                    class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                        href="/detail" class="entry-meta__link">45</a></span></div>
-                                        </div>
-                                    </article>
-                                    <article class="post post-3 post-3_mod-a clearfix">
-                                        <div class="entry-media"><a href="assets/media/content/post/100x100/4.jpg"
-                                                class="prettyPhoto"><img src="assets/media/content/post/100x100/4.jpg"
-                                                    alt="Foto" class="img-responsive" /></a></div>
-                                        <div class="entry-main">
-                                            <div class="entry-header">
-                                                <h2 class="entry-title"><a href="/detail">Volupta tem acusa
-                                                        ntium dolore me laud</a></h2>
-                                            </div>
-                                            <div class="entry-meta"><span class="category color-4">sports</span><span
-                                                    class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                        href="/detail" class="entry-meta__link">48</a></span></div>
-                                        </div>
-                                    </article>
-                                    <article class="post post-3 post-3_mod-a clearfix">
-                                        <div class="entry-media"><a href="assets/media/content/post/100x100/5.jpg"
-                                                class="prettyPhoto"><img src="assets/media/content/post/100x100/5.jpg"
-                                                    alt="Foto" class="img-responsive" /></a></div>
-                                        <div class="entry-main">
-                                            <div class="entry-header">
-                                                <h2 class="entry-title"><a href="/detail">Aliquip exea comod
-                                                        rure nsewuat duis</a></h2>
-                                            </div>
-                                            <div class="entry-meta"><span
-                                                    class="category color-12">technology</span><span
-                                                    class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                        href="/detail" class="entry-meta__link">12</a></span></div>
-                                        </div>
-                                    </article>
-                                </div>
-                            </section>
-                            <section class="widget">
-                                <h2 class="widget-title ui-title-inner text-right">posts tags</h2>
-                                <div class="decor-right"></div>
-                                <div class="widget-content">
-                                    <ul class="list-tags list-unstyled">
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">entertainment</a></li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">fashion</a></li>
-                                        <li class="list-tags__item"><a href="/category" class="list-tags__link">news</a>
-                                        </li>
-                                        <li class="list-tags__item"><a href="/category" class="list-tags__link">Arts</a>
-                                        </li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">Sports</a></li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">photography</a></li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">business</a></li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">magazine</a></li>
-                                        <li class="list-tags__item"><a href="/category" class="list-tags__link">breaking
-                                                news</a></li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">music</a></li>
-                                        <li class="list-tags__item"><a href="/category" class="list-tags__link">latest
-                                                Videos</a></li>
-                                        <li class="list-tags__item"><a href="/category"
-                                                class="list-tags__link">gallery</a></li>
-                                    </ul>
-                                </div>
+                                <?= $this->include('partials/popular-news'); ?>
                             </section>
                         </aside>
                     </div>
@@ -394,82 +271,86 @@
                             data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
                             class="owl-carousel owl-theme owl-theme_mod-e enable-owl-carousel">
                             <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a href="assets/media/content/post/360x300/1.jpg"
-                                        class="prettyPhoto"><img src="assets/media/content/post/360x300/1.jpg"
-                                            alt="Foto" class="img-responsive" /></a><span
-                                        class="label bg-1">politics</span>
+                                <div class="entry-media"><a
+                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/1.jpg"
+                                        class="prettyPhoto"><img
+                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/1.jpg" alt="Foto"
+                                            class="img-responsive" /></a><span class="label bg-1">politics</span>
                                 </div>
                                 <div class="entry-main">
                                     <div class="entry-header">
                                         <h2 class="entry-title text-uppercase">Lorem ipsum dolor amt elit sed tempor
                                             incidunt</h2>
                                     </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a href="/detail"
-                                                class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a href="/detail"
-                                                class="entry-meta__link">15 mins
+                                    <div class="entry-meta"><span class="entry-meta__item">By<a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
+                                                sina</a></span><span class="entry-meta__item"><a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
                                                 ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="/detail"
+                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
                                                 class="entry-meta__link">23</a></span></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a href="assets/media/content/post/360x300/2.jpg"
-                                        class="prettyPhoto"><img src="assets/media/content/post/360x300/2.jpg"
-                                            alt="Foto" class="img-responsive" /></a><span
-                                        class="label bg-6">travel</span>
+                                <div class="entry-media"><a
+                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg"
+                                        class="prettyPhoto"><img
+                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg" alt="Foto"
+                                            class="img-responsive" /></a><span class="label bg-6">travel</span>
                                 </div>
                                 <div class="entry-main">
                                     <div class="entry-header">
                                         <h2 class="entry-title text-uppercase">nostrud exercitation ullamco laboris nisi
                                             aliquip</h2>
                                     </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a href="/detail"
-                                                class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a href="/detail"
-                                                class="entry-meta__link">15 mins
+                                    <div class="entry-meta"><span class="entry-meta__item">By<a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
+                                                sina</a></span><span class="entry-meta__item"><a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
                                                 ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="/detail"
+                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
                                                 class="entry-meta__link">23</a></span></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a href="assets/media/content/post/360x300/3.jpg"
-                                        class="prettyPhoto"><img src="assets/media/content/post/360x300/3.jpg"
-                                            alt="Foto" class="img-responsive" /></a><span
-                                        class="label bg-2">technology</span>
+                                <div class="entry-media"><a
+                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/3.jpg"
+                                        class="prettyPhoto"><img
+                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/3.jpg" alt="Foto"
+                                            class="img-responsive" /></a><span class="label bg-2">technology</span>
                                 </div>
                                 <div class="entry-main">
                                     <div class="entry-header">
                                         <h2 class="entry-title text-uppercase">sedo eiusmod tempor incidunt ut labore
                                             dolore</h2>
                                     </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a href="/detail"
-                                                class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a href="/detail"
-                                                class="entry-meta__link">15 mins
+                                    <div class="entry-meta"><span class="entry-meta__item">By<a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
+                                                sina</a></span><span class="entry-meta__item"><a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
                                                 ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="/detail"
+                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
                                                 class="entry-meta__link">23</a></span></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a href="assets/media/content/post/360x300/2.jpg"
-                                        class="prettyPhoto"><img src="assets/media/content/post/360x300/2.jpg"
-                                            alt="Foto" class="img-responsive" /></a><span
-                                        class="label bg-6">travel</span>
+                                <div class="entry-media"><a
+                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg"
+                                        class="prettyPhoto"><img
+                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg" alt="Foto"
+                                            class="img-responsive" /></a><span class="label bg-6">travel</span>
                                 </div>
                                 <div class="entry-main">
                                     <div class="entry-header">
                                         <h2 class="entry-title text-uppercase">nostrud exercitation ullamco laboris nisi
                                             aliquip</h2>
                                     </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a href="/detail"
-                                                class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a href="/detail"
-                                                class="entry-meta__link">15 mins
+                                    <div class="entry-meta"><span class="entry-meta__item">By<a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
+                                                sina</a></span><span class="entry-meta__item"><a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
                                                 ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="/detail"
+                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
                                                 class="entry-meta__link">23</a></span></div>
                                 </div>
                             </article>
@@ -489,16 +370,25 @@
                         <div data-min480="1" data-min768="5" data-min992="5" data-min1200="5" data-pagination="false"
                             data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
                             class="owl-carousel owl-theme enable-owl-carousel"><a
-                                href="assets/media/content/social-slider/1.jpg" class="prettyPhoto"><img
-                                    src="assets/media/content/social-slider/1.jpg" alt="foto"
-                                    class="img-responsive"></a><a href="assets/media/content/social-slider/2.jpg"
-                                class="prettyPhoto"><img src="assets/media/content/social-slider/2.jpg" alt="foto"
-                                    class="img-responsive"></a><a href="assets/media/content/social-slider/3.jpg"
-                                class="prettyPhoto"><img src="assets/media/content/social-slider/3.jpg" alt="foto"
-                                    class="img-responsive"></a><a href="assets/media/content/social-slider/4.jpg"
-                                class="prettyPhoto"><img src="assets/media/content/social-slider/4.jpg" alt="foto"
-                                    class="img-responsive"></a><a href="assets/media/content/social-slider/5.jpg"
-                                class="prettyPhoto"><img src="assets/media/content/social-slider/5.jpg" alt="foto"
+                                href="<?= base_url(); ?>/assets/media/content/social-slider/1.jpg"
+                                class="prettyPhoto"><img
+                                    src="<?= base_url(); ?>/assets/media/content/social-slider/1.jpg" alt="foto"
+                                    class="img-responsive"></a><a
+                                href="<?= base_url(); ?>/assets/media/content/social-slider/2.jpg"
+                                class="prettyPhoto"><img
+                                    src="<?= base_url(); ?>/assets/media/content/social-slider/2.jpg" alt="foto"
+                                    class="img-responsive"></a><a
+                                href="<?= base_url(); ?>/assets/media/content/social-slider/3.jpg"
+                                class="prettyPhoto"><img
+                                    src="<?= base_url(); ?>/assets/media/content/social-slider/3.jpg" alt="foto"
+                                    class="img-responsive"></a><a
+                                href="<?= base_url(); ?>/assets/media/content/social-slider/4.jpg"
+                                class="prettyPhoto"><img
+                                    src="<?= base_url(); ?>/assets/media/content/social-slider/4.jpg" alt="foto"
+                                    class="img-responsive"></a><a
+                                href="<?= base_url(); ?>/assets/media/content/social-slider/5.jpg"
+                                class="prettyPhoto"><img
+                                    src="<?= base_url(); ?>/assets/media/content/social-slider/5.jpg" alt="foto"
                                     class="img-responsive"></a></div>
                     </section>
                 </div>

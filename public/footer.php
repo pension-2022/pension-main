@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="footer__first-section"><a href="<?= site_url(); ?>" class="footer__logo"
+                <div class="footer__first-section"><a href="<?= site_url(); ?>/" class="footer__logo"
                         style="width: 200px;"><img src="assets/media/dpbri-color.svg" alt="logo"
                             class="img-responsive"></a>
                     <div class="footer__info">Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod tempor
@@ -51,7 +51,7 @@
                             <h3 class="footer__title ui-title-inner">get Connect</h3>
                             <div class="decor-right decor-right_sm bg-3"></div>
                             <ul class="footer-list list list-mark-2">
-                                <li><a href="contacts.html">Contact Us</a></li>
+                                <li><a href="<?= site_url(); ?>contacts.html">Contact Us</a></li>
                                 <li><a href="<?= site_url(); ?>/category">Download apps</a></li>
                                 <li><a href="<?= site_url(); ?>/category">podcasts</a></li>
                                 <li><a href="<?= site_url(); ?>/category">newsletter signup</a></li>
@@ -72,25 +72,25 @@
                     </div>
                     <div class="footer-bottom__inner">
                         <ul class="social-links list-inline">
-                            <li><a href="http://twitter.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>twitter.com" class="social-links__item_link"><i
                                         class="icon fa fa-twitter"></i></a></li>
-                            <li><a href="http://facebook.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>facebook.com" class="social-links__item_link"><i
                                         class="icon fa fa-facebook"></i></a></li>
-                            <li><a href="http://instagram.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>instagram.com" class="social-links__item_link"><i
                                         class="icon fa fa-instagram"></i></a></li>
-                            <li><a href="http://linkedin.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>linkedin.com" class="social-links__item_link"><i
                                         class="icon fa fa-linkedin"></i></a></li>
-                            <li><a href="http://pinterest.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>pinterest.com" class="social-links__item_link"><i
                                         class="icon fa fa-pinterest-p"></i></a></li>
-                            <li><a href="http://youtube.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>youtube.com" class="social-links__item_link"><i
                                         class="icon fa fa-youtube-play"></i></a></li>
-                            <li><a href="http://rss.com" class="social-links__item_link"><i
+                            <li><a href="<?= site_url(); ?>rss.com" class="social-links__item_link"><i
                                         class="icon fa fa-rss"></i></a>
                             </li>
                         </ul>
                     </div>
-                    <div class="copyright">Copyright © <a href="<?= site_url(); ?>"> Dana Pensiun BRI 2022.</a> Powered
-                        by <a href="http://zancodes.com">Zancodes.com</a>
+                    <div class="copyright">Copyright © <a href="<?= site_url(); ?>/"> Dana Pensiun BRI 2022.</a> Powered
+                        by <a href="<?= site_url(); ?>www.zancodes.com">Zancodes.com</a>
                     </div>
                 </div>
             </div>
