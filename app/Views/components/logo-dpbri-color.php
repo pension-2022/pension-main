@@ -1,0 +1,1 @@
+<img src="<?= base_url(); ?>/assets/media/dpbri-color.svg" alt="logo" class="img-responsive logo__img center-block">

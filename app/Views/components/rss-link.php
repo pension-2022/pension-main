@@ -1,0 +1,1 @@
+<a href="http://rss.com" target="_blank" class="social-links__item_link"><i class="icon fa fa-rss"></i></a>

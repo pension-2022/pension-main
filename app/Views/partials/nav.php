@@ -44,19 +44,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -74,10 +62,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -96,12 +81,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -118,12 +99,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -140,12 +117,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -161,19 +134,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -191,10 +152,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -213,12 +171,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -235,12 +189,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -257,12 +207,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -278,19 +224,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -308,10 +242,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -330,12 +261,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -352,12 +279,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -374,12 +297,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -395,19 +314,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -425,10 +332,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -447,12 +351,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -469,12 +369,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -491,12 +387,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -512,19 +404,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -542,10 +422,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -564,12 +441,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -586,12 +459,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -608,12 +477,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -629,19 +494,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -659,10 +512,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -681,12 +531,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -703,12 +549,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -725,12 +567,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -746,19 +584,7 @@
                                         <div class="yamm-content">
                                             <div class="row">
                                                 <div class="col-md-4 col-sm-6">
-                                                    <ul class="list list-mark-1 list-mark-1_mod-a">
-                                                        <li><a href="<?= site_url(); ?>/category">Asia & europe</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">festival games</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">world
-                                                                organizations</a></li>
-                                                        <li><a href="<?= site_url(); ?>/category">africa & middle
-                                                                east</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">pakistan & india</a>
-                                                        </li>
-                                                        <li><a href="<?= site_url(); ?>/category">usa & canada</a></li>
-                                                    </ul>
+                                                    <?= $this->include('components/categories'); ?>
                                                 </div>
                                                 <div class="col-md-4 col-sm-6">
                                                     <article class="post post-4 post-4_mod-a clearfix">
@@ -776,10 +602,7 @@
                                                             <div class="entry-meta"><span class="entry-meta__item"><a
                                                                         href="<?= site_url(); ?>/detail"
                                                                         class="entry-meta__link">38 mins
-                                                                        ago</a></span><span class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">62</a></span>
+                                                                        ago</a></span><?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -798,12 +621,8 @@
                                                                         href="<?= site_url(); ?>/detail">Volupta tem
                                                                         acusa ntium dolore me laud</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-4">Entertainment</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">4</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -820,12 +639,8 @@
                                                                         href="<?= site_url(); ?>/detail">Incididunt
                                                                         ulabore dolore malnu alikua</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-5">world</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">91</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>
@@ -842,12 +657,8 @@
                                                                         href="<?= site_url(); ?>/detail">Sed eiusmod
                                                                         tempor incid magna aliqua enim</a></h2>
                                                             </div>
-                                                            <div class="entry-meta"><span
-                                                                    class="category color-3">lifestyle</span><span
-                                                                    class="entry-meta__item"><i
-                                                                        class="icon pe-7s-comment"></i><a
-                                                                        href="<?= site_url(); ?>/detail"
-                                                                        class="entry-meta__link">54</a></span>
+                                                            <div class="entry-meta">
+                                                                <?= $this->include('components/comment-count'); ?>
                                                             </div>
                                                         </div>
                                                     </article>

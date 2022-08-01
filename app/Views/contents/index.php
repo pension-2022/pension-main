@@ -150,10 +150,9 @@
                                                     <div class="entry-meta"><span class="entry-meta__item"><a
                                                                 href="<?= site_url(); ?>/detail"
                                                                 class="entry-meta__link">15
-                                                                mins ago</a></span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i><a
-                                                                href="<?= site_url(); ?>/detail"
-                                                                class="entry-meta__link">23</a></span></div>
+                                                                mins
+                                                                ago</a></span><?= $this->include('components/comment-count'); ?>
+                                                    </div>
                                                     <div class="entry-content">
                                                         <p>Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod
                                                             tempor incididunt labore dolore magna aliqua enimad minim
@@ -182,10 +181,9 @@
                                                     <div class="entry-meta"><span class="entry-meta__item"><a
                                                                 href="<?= site_url(); ?>/detail"
                                                                 class="entry-meta__link">15
-                                                                mins ago</a></span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i><a
-                                                                href="<?= site_url(); ?>/detail"
-                                                                class="entry-meta__link">23</a></span></div>
+                                                                mins
+                                                                ago</a></span><?= $this->include('components/comment-count'); ?>
+                                                    </div>
                                                     <div class="entry-content">
                                                         <p>Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod
                                                             tempor incididunt labore dolore magna aliqua enimad minim
@@ -214,10 +212,9 @@
                                                     <div class="entry-meta"><span class="entry-meta__item"><a
                                                                 href="<?= site_url(); ?>/detail"
                                                                 class="entry-meta__link">15
-                                                                mins ago</a></span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i><a
-                                                                href="<?= site_url(); ?>/detail"
-                                                                class="entry-meta__link">23</a></span></div>
+                                                                mins
+                                                                ago</a></span><?= $this->include('components/comment-count'); ?>
+                                                    </div>
                                                     <div class="entry-content">
                                                         <p>Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod
                                                             tempor incididunt labore dolore magna aliqua enimad minim
@@ -246,10 +243,9 @@
                                                     <div class="entry-meta"><span class="entry-meta__item"><a
                                                                 href="<?= site_url(); ?>/detail"
                                                                 class="entry-meta__link">15
-                                                                mins ago</a></span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i><a
-                                                                href="<?= site_url(); ?>/detail"
-                                                                class="entry-meta__link">23</a></span></div>
+                                                                mins
+                                                                ago</a></span><?= $this->include('components/comment-count'); ?>
+                                                    </div>
                                                     <div class="entry-content">
                                                         <p>Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod
                                                             tempor incididunt labore dolore magna aliqua enimad minim
@@ -278,10 +274,9 @@
                                                     <div class="entry-meta"><span class="entry-meta__item"><a
                                                                 href="<?= site_url(); ?>/detail"
                                                                 class="entry-meta__link">15
-                                                                mins ago</a></span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i><a
-                                                                href="<?= site_url(); ?>/detail"
-                                                                class="entry-meta__link">23</a></span></div>
+                                                                mins
+                                                                ago</a></span><?= $this->include('components/comment-count'); ?>
+                                                    </div>
                                                     <div class="entry-content">
                                                         <p>Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod
                                                             tempor incididunt labore dolore magna aliqua enimad minim
@@ -310,10 +305,9 @@
                                                     <div class="entry-meta"><span class="entry-meta__item"><a
                                                                 href="<?= site_url(); ?>/detail"
                                                                 class="entry-meta__link">15
-                                                                mins ago</a></span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i><a
-                                                                href="<?= site_url(); ?>/detail"
-                                                                class="entry-meta__link">23</a></span></div>
+                                                                mins
+                                                                ago</a></span><?= $this->include('components/comment-count'); ?>
+                                                    </div>
                                                     <div class="entry-content">
                                                         <p>Lorem ipsum dolor amet consecteu adipisicing sed do eiusmod
                                                             tempor incididunt labore dolore magna aliqua enimad minim
@@ -336,9 +330,8 @@
                                                         <h2 class="entry-title text-uppercase">amet consading elit usmod
                                                             tempor</h2>
                                                     </div>
-                                                    <div class="entry-meta"><span class="entry-meta__item">1 hour
-                                                            ago</span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i>23</span></div>
+                                                    <div class="entry-meta">
+                                                        <?= $this->include('components/comment-count'); ?></div>
                                                 </div>
                                             </article>
                                         </div>
@@ -354,9 +347,8 @@
                                                         <h2 class="entry-title text-uppercase">amet consading elit usmod
                                                             tempor</h2>
                                                     </div>
-                                                    <div class="entry-meta"><span class="entry-meta__item">1 hour
-                                                            ago</span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i>23</span></div>
+                                                    <div class="entry-meta">
+                                                        <?= $this->include('components/comment-count'); ?></div>
                                                 </div>
                                             </article>
                                         </div>
@@ -372,9 +364,8 @@
                                                         <h2 class="entry-title text-uppercase">amet consading elit usmod
                                                             tempor</h2>
                                                     </div>
-                                                    <div class="entry-meta"><span class="entry-meta__item">1 hour
-                                                            ago</span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i>23</span></div>
+                                                    <div class="entry-meta">
+                                                        <?= $this->include('components/comment-count'); ?></div>
                                                 </div>
                                             </article>
                                         </div>
@@ -390,9 +381,8 @@
                                                         <h2 class="entry-title text-uppercase">amet consading elit usmod
                                                             tempor</h2>
                                                     </div>
-                                                    <div class="entry-meta"><span class="entry-meta__item">1 hour
-                                                            ago</span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i>23</span></div>
+                                                    <div class="entry-meta">
+                                                        <?= $this->include('components/comment-count'); ?></div>
                                                 </div>
                                             </article>
                                         </div>
@@ -408,9 +398,8 @@
                                                         <h2 class="entry-title text-uppercase">amet consading elit usmod
                                                             tempor</h2>
                                                     </div>
-                                                    <div class="entry-meta"><span class="entry-meta__item">1 hour
-                                                            ago</span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i>23</span></div>
+                                                    <div class="entry-meta">
+                                                        <?= $this->include('components/comment-count'); ?></div>
                                                 </div>
                                             </article>
                                         </div>
@@ -426,9 +415,8 @@
                                                         <h2 class="entry-title text-uppercase">amet consading elit usmod
                                                             tempor</h2>
                                                     </div>
-                                                    <div class="entry-meta"><span class="entry-meta__item">1 hour
-                                                            ago</span><span class="entry-meta__item"><i
-                                                                class="icon pe-7s-comment"></i>23</span></div>
+                                                    <div class="entry-meta">
+                                                        <?= $this->include('components/comment-count'); ?></div>
                                                 </div>
                                             </article>
                                         </div>
@@ -440,6 +428,27 @@
                 </div>
             </div>
         </section>
+        <div class="section-downloads section-downloads_mod-a wow">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-4 col-md-10 col-md-offset-2">
+                        <div class="downloads downloads_mod-a section__inner clearfix">
+                            <div class="downloads__wrap-text">
+                                <h2 class="downloads__title ui-title-block"><span class="ui-title-block__subtitle">Stay
+                                        Updated With
+                                        News</span><span class="text-uppercase">ANYtime anywhere</span></h2>
+                                <div class="downloads__info">get free mobile app & enjoy reading news!</div>
+                            </div>
+                            <div class="downloads__btns-group"><a
+                                    href="http://appstoreconnect.apple.com/apps/1508718316/appstore"
+                                    class="downloads__btn"><i class="icon fa fa-apple"></i>for Apple iOS</a><a
+                                    href="http://play.google.com/store/apps/details?id=com.dpbri.dpbri"
+                                    class="downloads__btn"><i class="icon fa fa-android"></i>for Android OS</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="section-default">
             <div class="container">
                 <div class="row">
@@ -466,9 +475,8 @@
                                                     href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                     sina</a></span><span class="entry-meta__item"><a
                                                     href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                    ago</a></span><span class="entry-meta__item"><i
-                                                    class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">62</a></span></div>
+                                                    ago</a></span><?= $this->include('components/comment-count'); ?>
+                                        </div>
                                         <div class="entry-content">
                                             <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod tempor
                                                 incididunt labore et dolore magna aliqua enimad minim ...</p>
@@ -500,9 +508,8 @@
                                                     href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                     sina</a></span><span class="entry-meta__item"><a
                                                     href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                    ago</a></span><span class="entry-meta__item"><i
-                                                    class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">62</a></span></div>
+                                                    ago</a></span><?= $this->include('components/comment-count'); ?>
+                                        </div>
                                         <div class="entry-content">
                                             <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod tempor
                                                 incididunt labore et dolore magna aliqua enimad minim ...</p>
@@ -528,10 +535,8 @@
                                                     acusa
                                                     ntium dolore me laud</a></h2>
                                         </div>
-                                        <div class="entry-meta"><span class="category color-4">entertainment</span><span
-                                                class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                    href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">6</a></span>
+                                        <div class="entry-meta"><span
+                                                class="category color-4">entertainment</span><?= $this->include('components/comment-count'); ?>
                                         </div>
                                     </div>
                                 </article>
@@ -547,10 +552,8 @@
                                                     comod
                                                     rure nsewuat duis</a></h2>
                                         </div>
-                                        <div class="entry-meta"><span class="category color-4">entertainment</span><span
-                                                class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                    href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">54</a></span>
+                                        <div class="entry-meta"><span
+                                                class="category color-4">entertainment</span><?= $this->include('components/comment-count'); ?>
                                         </div>
                                     </div>
                                 </article>
@@ -566,10 +569,8 @@
                                                     comod
                                                     rure nsewuat duis</a></h2>
                                         </div>
-                                        <div class="entry-meta"><span class="category color-4">entertainment</span><span
-                                                class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                    href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">78</a></span>
+                                        <div class="entry-meta"><span
+                                                class="category color-4">entertainment</span><?= $this->include('components/comment-count'); ?>
                                         </div>
                                     </div>
                                 </article>
@@ -587,10 +588,8 @@
                                                     ulabore
                                                     dolore malnu alikua</a></h2>
                                         </div>
-                                        <div class="entry-meta"><span class="category color-5">world</span><span
-                                                class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                    href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">51</a></span>
+                                        <div class="entry-meta"><span
+                                                class="category color-5">world</span><?= $this->include('components/comment-count'); ?>
                                         </div>
                                     </div>
                                 </article>
@@ -606,10 +605,8 @@
                                                     comod
                                                     rure nasek euat duis</a></h2>
                                         </div>
-                                        <div class="entry-meta"><span class="category color-5">world</span><span
-                                                class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                    href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">14</a></span>
+                                        <div class="entry-meta"><span
+                                                class="category color-5">world</span><?= $this->include('components/comment-count'); ?>
                                         </div>
                                     </div>
                                 </article>
@@ -625,10 +622,8 @@
                                                     unde
                                                     omnist enatus error sit</a></h2>
                                         </div>
-                                        <div class="entry-meta"><span class="category color-5">world</span><span
-                                                class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
-                                                    href="<?= site_url(); ?>/detail"
-                                                    class="entry-meta__link">3</a></span>
+                                        <div class="entry-meta"><span
+                                                class="category color-5">world</span><?= $this->include('components/comment-count'); ?>
                                         </div>
                                     </div>
                                 </article>
@@ -676,9 +671,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-e clearfix">
@@ -691,9 +684,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                                 <div class="entry-media"><a
                                         href="<?= base_url(); ?>/assets/media/content/post/360x200/2.jpg"
@@ -718,9 +709,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-e clearfix">
@@ -739,9 +728,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-e clearfix">
@@ -754,9 +741,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                                 <div class="entry-media"><a
                                         href="<?= base_url(); ?>/assets/media/content/post/360x200/5.jpg"
@@ -781,9 +766,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                         </div>

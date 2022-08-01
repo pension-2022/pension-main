@@ -100,20 +100,13 @@
                                             href="<?= site_url(); ?>/category" class="post-tags__link"> Fashion,</a><a
                                             href="<?= site_url(); ?>/category" class="post-tags__link"> Health</a></div>
                                     <ul class="social-links social-links_mod-a list-inline">
-                                        <li class="bg-14"><a href="facebook.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-facebook"></i></a></li>
-                                        <li class="bg-15"><a href="twitter.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-twitter"></i></a></li>
-                                        <li class="bg-16"><a href="plus.google.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-google-plus"></i></a></li>
-                                        <li class="bg-17"><a href="instagram.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-instagram"></i></a></li>
-                                        <li class="bg-18"><a href="rss.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-rss"></i></a></li>
-                                        <li class="bg-19"><a href="pinterest.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-pinterest-p"></i></a></li>
-                                        <li class="bg-20"><a href="mail.com" class="social-links__item_link"><i
-                                                    class="icon fa fa-envelope-o"></i></a></li>
+                                        <li class="bg-14"><?= $this->include('components/facebook-link'); ?></li>
+                                        <li class="bg-15"><?= $this->include('components/twitter-link'); ?></li>
+                                        <li class="bg-16"><?= $this->include('components/googleplus-link'); ?></li>
+                                        <li class="bg-17"><?= $this->include('components/instagram-link'); ?></li>
+                                        <li class="bg-18"><?= $this->include('components/rss-link'); ?></li>
+                                        <li class="bg-19"><?= $this->include('components/pinterest-link'); ?></li>
+                                        <li class="bg-20"><?= $this->include('components/mail-link'); ?></li>
                                     </ul>
                                 </div>
                             </div>
@@ -286,9 +279,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-h clearfix">
@@ -307,9 +298,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-h clearfix">
@@ -328,9 +317,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                             <article class="post post-2 post-2_mod-h clearfix">
@@ -349,9 +336,7 @@
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
                                                 sina</a></span><span class="entry-meta__item"><a
                                                 href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><span class="entry-meta__item"><i
-                                                class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                                class="entry-meta__link">23</a></span></div>
+                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
                         </div>

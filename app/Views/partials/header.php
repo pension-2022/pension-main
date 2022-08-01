@@ -32,27 +32,19 @@
             <div class="row">
                 <div class="col-md-4">
                     <ul class="social-links list-inline">
-                        <li><a href="twitter.com" class="social-links__item_link"><i class="icon fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="http://facebook.com" class="social-links__item_link"><i
-                                    class="icon fa fa-facebook"></i></a></li>
-                        <li><a href="http://instagram.com" class="social-links__item_link"><i
-                                    class="icon fa fa-instagram"></i></a></li>
-                        <li><a href="http://linkedin.com" class="social-links__item_link"><i
-                                    class="icon fa fa-linkedin"></i></a></li>
-                        <li><a href="http://pinterest.com" class="social-links__item_link"><i
-                                    class="icon fa fa-pinterest-p"></i></a></li>
-                        <li><a href="http://youtube.com" class="social-links__item_link"><i
-                                    class="icon fa fa-youtube-play"></i></a></li>
-                        <li><a href="http://rss.com" class="social-links__item_link"><i class="icon fa fa-rss"></i></a>
-                        </li>
+                        <li><?= $this->include('components/twitter-link'); ?></li>
+                        <li><?= $this->include('components/facebook-link'); ?></li>
+                        <li><?= $this->include('components/instagram-link'); ?></li>
+                        <li><?= $this->include('components/linkedin-link'); ?></li>
+                        <li><?= $this->include('components/pinterest-link'); ?></li>
+                        <li><?= $this->include('components/youtube-link'); ?></li>
+                        <li><?= $this->include('components/rss-link'); ?></li>
                     </ul>
                 </div>
                 <!-- <div class="col-md-1"></div> -->
                 <div class="col-md-4">
-                    <div style="width: 200px; margin: auto;"><a href="<?= site_url(); ?>" class="logo"><img
-                                style="margin: auto;" src="<?= base_url(); ?>/assets/media/dpbri-color.svg" alt="Logo"
-                                class="logo__img img-responsive center-block" /></a></div>
+                    <div style="width: 200px; margin: auto;"><a href="<?= site_url(); ?>"
+                            class="logo"><?= $this->include('components/logo-dpbri-color'); ?></a></div>
                 </div>
                 <!-- <div class="col-md-1"></div> -->
                 <div class="col-md-4">
