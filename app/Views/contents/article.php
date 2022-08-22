@@ -3,17 +3,20 @@
         <?= $this->include('partials/header'); ?>
         <div class="wrap-nav">
             <?= $this->include('partials/nav'); ?>
-            <div class="section-title section-bg">
+            <div class="section-title"
+                style="background-image: url('<?= base_url(); ?>/assets/banner.jpg'); background-size: cover; background-position: center center;">
                 <div class="section__inner">
-                    <h1 class="ui-title-page">standard post</h1>
+                    <h1 class="ui-title-page">
+                        <?= $datarow[0]['n_title']; ?>
+                    </h1>
                 </div>
             </div>
         </div>
         <div class="breadcrumb-wrap">
             <ol class="breadcrumb">
-                <li><a href="<?= site_url(); ?>">HOME</a></li>
-                <li><a href="<?= site_url(); ?>/category">lifestyle</a></li>
-                <li class="active">news in details</li>
+                <li><a href="<?= site_url(); ?>">Beranda</a></li>
+                <li><a href="<?= site_url(); ?>/category">Hiburan</a></li>
+                <li class="active">article</li>
             </ol>
         </div>
         <div class="section-type-k">
@@ -22,92 +25,31 @@
                     <div class="col-md-8">
                         <article class="post post-full clearfix">
                             <div class="entry-media"><a
-                                    href="<?= base_url(); ?>/assets/media/content/post/750x400/1.jpg"
+                                    href="<?= base_url(); ?>/uploads/photos/<?= $datarow[0]['n_photo']; ?>"
                                     class="prettyPhoto"><img
-                                        src="<?= base_url(); ?>/assets/media/content/post/750x400/1.jpg" alt="Foto"
-                                        class="img-responsive"></a></div>
+                                        src="<?= base_url(); ?>/uploads/photos/<?= $datarow[0]['n_photo']; ?>"
+                                        alt="Foto" class="img-responsive"></a></div>
                             <div class="entry-main">
                                 <div class="entry-header"><span class="label bg-3">lifestyle</span><span
                                         class="label bg-5">world</span>
-                                    <h2 class="entry-title"><a href="<?= site_url(); ?>/detail">Lorem ipsum dolor amt
-                                            elit sed
-                                            tempor incidunt</a></h2>
+                                    <h2 class="entry-title"><a href="<?= site_url(); ?>/detail">
+                                            <?= $datarow[0]['n_title']; ?>
+                                        </a></h2>
                                 </div>
                                 <div class="entry-meta"><span class="entry-meta__item">By<a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
-                                            sina</a></span><span class="entry-meta__item"><a
+                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"> muhammad
+                                            hafid</a></span><span class="entry-meta__item"><a
                                             href="<?= site_url(); ?>/detail" class="entry-meta__link">feb 30,
                                             2016</a></span><span class="entry-meta__item"><i
                                             class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
                                             class="entry-meta__link">23</a></span></div>
                                 <div class="entry-content">
-                                    <p>Lorem ipsum dolor amet consectetur adipisicing elit sed do eiusmod tempor
-                                        incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
-                                        exercitation ullamco laboris onsequat Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. Ut enim minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                        aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit in
-                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                                    <p>Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt
-                                        mollit anim est laborum sed ut perspiciatis unde omnis iste natus error sit
-                                        voluptatem accusantium doloremque laudantium, totam remap riam eaque ipsa quae
-                                        ab illo inventore veritatis et quasi architecto.</p>
-                                    <div class="blockquote-wrap">
-                                        <div class="decor-left"></div>
-                                        <blockquote class="blockquote blockquote_mod-a">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod
-                                                tempor incididunt ut labore etual dolore magna aliqua Ut enim ad minim
-                                                veniam quis.</p>
-                                            <footer>
-                                                <cite title="Blockquote Title"><span class="blockquote__author">Andrew
-                                                        Burnett</span></cite>
-                                            </footer>
-                                        </blockquote>
-                                        <div class="decor-right"></div>
-                                    </div>
-                                    <p>Tempor incididunt labore et dolore magna aliqua enimad minim veniam sa quis
-                                        nostruda exercitation ullamco laboris onsequat Lorem ipsum dolor tasit amet
-                                        consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua.</p>
-                                    <h3 class="ui-title-inner">nostrud sed exercitation dolore</h3>
-                                    <p>Duis aute irure dolor reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint oc caecat cupidatat non proident sunt in
-                                        culpa qui officia deserunt mollit anim est laborum sedut persiciatis unde omnis
-                                        iste natus error sit voluptatem accusantium doloremque.</p>
-                                    <div class="post-full__col">
-                                        <div class="row">
-                                            <div class="col-md-6"><img
-                                                    src="<?= base_url(); ?>/assets/media/content/post/360x230/1.jpg"
-                                                    alt="foto" class="img-responsive"></div>
-                                            <div class="col-md-6">
-                                                <p>Tempor incididunt labore et dolore magna aliqua enimad minim veniam
-                                                    sa quis nostruda exercitation ullamco laboris onsequat lorem ipsum
-                                                    dolor tasit amet consectetur elit sed eiusmod.</p>
-                                                <p>Tempor incididunt ut labore et dolore magna aliqu ipsum dolor sit
-                                                    amet, consectetur adipisicing elit sed do eiusmod tempor incididunt
-                                                    ut labore dolore magna aliqua.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p>saud aute irure dolor reprehenderit in voluptate velit esse cillum dolore eu
-                                        fugiat nulla pariatur. Excepteur sint oc caecat cupidatat non proident sunt in
-                                        culpa qui officia deserunt mollit anim est laborum sedut persiciatis unde omnis
-                                        iste natus doloremque error sit voluptatem.</p>
+                                    <?= $datarow[0]['n_description']; ?>
                                 </div>
                                 <div class="entry-footer clearfix">
-                                    <div class="post-tags"><span class="post-tags__title">tags :</span><a
-                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Movies,</a><a
-                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Fashion,</a><a
-                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Health</a></div>
-                                    <ul class="social-links social-links_mod-a list-inline">
-                                        <li class="bg-14"><?= $this->include('components/facebook-link'); ?></li>
-                                        <li class="bg-15"><?= $this->include('components/twitter-link'); ?></li>
-                                        <li class="bg-16"><?= $this->include('components/googleplus-link'); ?></li>
-                                        <li class="bg-17"><?= $this->include('components/instagram-link'); ?></li>
-                                        <li class="bg-18"><?= $this->include('components/rss-link'); ?></li>
-                                        <li class="bg-19"><?= $this->include('components/pinterest-link'); ?></li>
-                                        <li class="bg-20"><?= $this->include('components/mail-link'); ?></li>
-                                    </ul>
+                                    <div class="post-tags"><span class="post-tags__title">kategori :</span><a
+                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Movies</a>
+                                    </div>
                                 </div>
                             </div>
                         </article>
@@ -122,24 +64,10 @@
                                     min veniam saquis nostru exercitation ullamco laboris onsequat lorem ipsum dolor
                                     tasit amet consect elit sed eiusmod incididunt labore et dolore magna aliquipsum.
                                 </div>
-                                <ul class="social-links list-inline">
-                                    <li><a href="twitter.com" class="social-links__item_link"><i
-                                                class="icon fa fa-twitter"></i></a></li>
-                                    <li><a href="facebook.com" class="social-links__item_link"><i
-                                                class="icon fa fa-facebook"></i></a></li>
-                                    <li><a href="instagram.com" class="social-links__item_link"><i
-                                                class="icon fa fa-instagram"></i></a></li>
-                                    <li><a href="linkedin.com" class="social-links__item_link"><i
-                                                class="icon fa fa-linkedin"></i></a></li>
-                                    <li><a href="pinterest.com" class="social-links__item_link"><i
-                                                class="icon fa fa-pinterest-p"></i></a></li>
-                                    <li><a href="youtube.com" class="social-links__item_link"><i
-                                                class="icon fa fa-youtube-play"></i></a></li>
-                                </ul>
                             </div>
                         </article>
                         <section class="section-comment">
-                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">Comments :<span
+                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">Komentar :<span
                                     class="comment-title__number"> 4</span></h3>
                             <div class="decor-left"></div>
                             <ul class="comments-list list-unstyled">
@@ -159,7 +87,7 @@
                                                     et dolore sed.</p>
                                             </div>
                                             <footer class="comment-footer"><a href="<?= site_url(); ?>"
-                                                    class="comment-btn btn btn-default btn-effect">reply</a></footer>
+                                                    class="comment-btn btn btn-default btn-effect">balas</a></footer>
                                         </div>
                                     </article>
                                     <ul class="children list-unstyled">
@@ -180,7 +108,7 @@
                                                             dolore sed.</p>
                                                     </div>
                                                     <footer class="comment-footer"><a href="<?= site_url(); ?>"
-                                                            class="comment-btn btn btn-default btn-effect">reply</a>
+                                                            class="comment-btn btn btn-default btn-effect">balas</a>
                                                     </footer>
                                                 </div>
                                             </article>
@@ -203,26 +131,26 @@
                                                     et dolore sed.</p>
                                             </div>
                                             <footer class="comment-footer"><a href="<?= site_url(); ?>"
-                                                    class="comment-btn btn btn-default btn-effect">reply</a></footer>
+                                                    class="comment-btn btn btn-default btn-effect">balas</a></footer>
                                         </div>
                                     </article>
                                 </li>
                             </ul>
                         </section>
                         <section class="section-reply-form">
-                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">leave a reply</h3>
+                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">komentar</h3>
                             <div class="decor-left"></div>
                             <form action="#" method="post" class="form-reply ui-form">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" placeholder="your name" class="form-control">
+                                        <input type="text" placeholder="nama" class="form-control">
                                     </div>
                                     <div class="col-md-6">
                                         <input type="email" placeholder="email" class="form-control">
                                     </div>
                                     <div class="col-xs-12">
-                                        <textarea rows="5" placeholder="comment" class="form-control"></textarea>
-                                        <button class="ui-form__btn btn btn-xs btn-info btn-effect">submit</button>
+                                        <textarea rows="5" placeholder="deskripsi" class="form-control"></textarea>
+                                        <button class="ui-form__btn btn btn-xs btn-info btn-effect">kirim</button>
                                     </div>
                                 </div>
                             </form>
@@ -233,16 +161,13 @@
                             <div class="widget">
                                 <form id="search-global-form" method="get" class="form-search">
                                     <div class="form-group has-feedback">
-                                        <input type="text" placeholder="Search any news, article"
+                                        <input type="text" placeholder="Cari artikel"
                                             class="form-search__input form-control">
                                         <button
                                             class="form-search__btn icon pe-7s-search form-control-feedback"></button>
                                     </div>
                                 </form>
                             </div>
-                            <section class="widget">
-                                <?= $this->include('partials/follow-us'); ?>
-                            </section>
                             <section class="widget">
                                 <?= $this->include('partials/categories'); ?>
                             </section>
@@ -258,8 +183,8 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-default">
-                        <h2 class="ui-title-block ui-title-block_border"><span class="ui-title-block__subtitle">Read
-                                More</span><span class="text-uppercase">related posts</span></h2>
+                        <h2 class="ui-title-block ui-title-block_border"><span class="text-uppercase">Artikel
+                                Terkait</span></h2>
                         <div data-min480="1" data-min768="2" data-min992="2" data-min1200="3" data-pagination="false"
                             data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
                             class="owl-carousel owl-theme owl-theme_mod-e enable-owl-carousel">
@@ -341,41 +266,6 @@
                             </article>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <section class="section-soc-slider">
-                        <div class="wrap-title-bg wrap-title-bg_mod-a">
-                            <h2 class="ui-title-bg">instagram images<span class="ui-title-bg__subtitle">follow us @
-                                    instagram</span></h2>
-                        </div>
-                        <div data-min480="1" data-min768="5" data-min992="5" data-min1200="5" data-pagination="false"
-                            data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
-                            class="owl-carousel owl-theme enable-owl-carousel"><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/1.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/1.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/2.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/2.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/3.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/3.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/4.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/4.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/5.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/5.jpg" alt="foto"
-                                    class="img-responsive"></a></div>
-                    </section>
                 </div>
             </div>
         </div>

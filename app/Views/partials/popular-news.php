@@ -1,4 +1,4 @@
-<h2 class="widget-title ui-title-inner text-right">popular news</h2>
+<h2 class="widget-title ui-title-inner text-right">Artikel Populer</h2>
 <div class="decor-right"></div>
 <div class="widget-content">
     <article class="post post-3 post-3_mod-a clearfix">

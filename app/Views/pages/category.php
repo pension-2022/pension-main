@@ -1,7 +1,7 @@
 <?= $this->extend('layouts/main'); ?>
 
 <?= $this->section('root'); ?>
-<?= $this->include('contents/article/detail'); ?>
+<?= $this->include('contents/category'); ?>
 <?= $this->endSection(); ?>
 
 <?= $this->section('script'); ?>

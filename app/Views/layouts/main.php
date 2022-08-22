@@ -24,7 +24,7 @@
         media="all" />
     <link href="<?= base_url(); ?>/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5"
         media="all" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/dpbri.ico" />
     <script>
     (function(H) {
         H.className = H.className.replace(/\bno-js\b/, 'js')
@@ -39,7 +39,7 @@
     <div data-header="sticky" data-header-top="200" class="layout-theme animated-css">
         <?= $this->renderSection('root'); ?>
     </div>
-
+    <?= $this->include('partials/side-nav'); ?>
     <?= $this->renderSection('script'); ?>
 </body>
 

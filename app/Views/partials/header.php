@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="top-header__link bg-primary">
-                        <div class="top-header__wrap-link">top headlines<i class="icon fa fa-caret-right"></i>
+                        <div class="top-header__wrap-link">Berita Terkini<i class="icon fa fa-caret-right"></i>
                         </div>
                     </div>
                     <div class="top-header__ticker">
@@ -31,15 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <ul class="social-links list-inline">
-                        <li><?= $this->include('components/twitter-link'); ?></li>
-                        <li><?= $this->include('components/facebook-link'); ?></li>
-                        <li><?= $this->include('components/instagram-link'); ?></li>
-                        <li><?= $this->include('components/linkedin-link'); ?></li>
-                        <li><?= $this->include('components/pinterest-link'); ?></li>
-                        <li><?= $this->include('components/youtube-link'); ?></li>
-                        <li><?= $this->include('components/rss-link'); ?></li>
-                    </ul>
+                    <?= $this->include('components/social-links'); ?>
                 </div>
                 <!-- <div class="col-md-1"></div> -->
                 <div class="col-md-4">
@@ -50,16 +42,37 @@
                 <div class="col-md-4">
                     <div class="header-main__links">
                         <a href="<?= site_url(); ?>" class="header-main__links-item">
-                            Sign In
+                            Masuk
                         </a>
-                        or
+                        atau
                         <a href="<?= site_url(); ?>" class="header-main__links-item">
-                            Register
+                            daftar
                         </a>
-                        <a href="#fakelink" class="search-open"><i class="icon pe-7s-search"></i></a>
+                        <a href="#fakelink" class="search-open">
+                            <i class="icon pe-7s-search"></i>
+                        </a>
+                        <a href="#cd-nav" class="trigger cd-nav-trigger">
+                            <i class="icon pe-7s-menu"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="header-search">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                    <div class="navbar-search">
+                        <form class="search-global">
+                            <input type="text" placeholder="Type to search" autocomplete="off" name="s" value=""
+                                class="search-global__input" />
+                            <button class="search-global__btn"><i class="icon fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="search-close close"><i class="fa fa-times"></i></button>
     </div>
 </header>

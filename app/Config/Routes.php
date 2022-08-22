@@ -43,13 +43,23 @@ $pages = [
     ],
     // Begin Detail
     [
-        'link' => '/detail',
-        'controller' => 'Pages::detail'
+        'link' => '/article',
+        'controller' => 'Pages::article'
     ],
     // Begin Category
     [
         'link' => '/category',
         'controller' => 'Pages::category'
+    ],
+    // Begin Signin
+    [
+        'link' => '/sign-in',
+        'controller' => 'Pages::sign_in'
+    ],
+    // Begin Signup
+    [
+        'link' => '/sign-up',
+        'controller' => 'Pages::sign_up'
     ],
 ];
 

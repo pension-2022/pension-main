@@ -3,16 +3,17 @@
         <?= $this->include('partials/header'); ?>
         <div class="wrap-nav">
             <?= $this->include('partials/nav'); ?>
-            <div class="section-title section-bg">
+            <div class="section-title"
+                style="background-image: url('<?= base_url(); ?>/assets/banner.jpg'); background-size: cover; background-position: center center;">
                 <div class="section__inner">
-                    <h1 class="ui-title-page">Entertainment</h1>
+                    <h1 class="ui-title-page">Hiburan</h1>
                 </div>
             </div>
         </div>
         <div class="breadcrumb-wrap">
             <ol class="breadcrumb">
-                <li><a href="<?= site_url(); ?>">HOME</a></li>
-                <li class="active">Entertainment</li>
+                <li><a href="<?= site_url(); ?>">Beranda</a></li>
+                <li class="active">Hiburan</li>
             </ol>
         </div>
         <div class="section-type-b">
@@ -74,8 +75,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -100,8 +101,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -126,8 +127,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -152,8 +153,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -178,8 +179,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -204,8 +205,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -230,8 +231,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -256,8 +257,8 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <article class="post post-5 clearfix">
@@ -282,19 +283,21 @@
                                         incididunt labore et dolore magna aliqua enimad minim veniam quis nostruda
                                         exercitation ullamco laboris onsequat ...</p>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">Continue
-                                        Reading</a></div>
+                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                        lebih lanjut</a></div>
                             </div>
                         </article>
                         <div class="wrap-pagination">
                             <ul class="pagination">
-                                <li><a href="#">previous</a></li>
+                                <li><a href="#">
+                                        < </a>
+                                </li>
                                 <li class="active"><a href="#">1</a></li>
                                 <li><a href="#">2</a></li>
                                 <li><a href="#">3</a></li>
                                 <li><a href="#">4</a></li>
                                 <li><a href="#">5</a></li>
-                                <li><a href="#">Next</a></li>
+                                <li><a href="#">></a></li>
                             </ul>
                         </div>
                     </div>
@@ -321,41 +324,6 @@
                             </section>
                         </aside>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <section class="section-soc-slider">
-                        <div class="wrap-title-bg wrap-title-bg_mod-a">
-                            <h2 class="ui-title-bg">instagram images<span class="ui-title-bg__subtitle">follow us @
-                                    instagram</span></h2>
-                        </div>
-                        <div data-min480="1" data-min768="5" data-min992="5" data-min1200="5" data-pagination="false"
-                            data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
-                            class="owl-carousel owl-theme enable-owl-carousel"><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/1.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/1.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/2.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/2.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/3.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/3.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/4.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/4.jpg" alt="foto"
-                                    class="img-responsive"></a><a
-                                href="<?= base_url(); ?>/assets/media/content/social-slider/5.jpg"
-                                class="prettyPhoto"><img
-                                    src="<?= base_url(); ?>/assets/media/content/social-slider/5.jpg" alt="foto"
-                                    class="img-responsive"></a></div>
-                    </section>
                 </div>
             </div>
         </div>
