@@ -2,10 +2,18 @@
 
 namespace App\Controllers;
 
+use Config\Database;
+
 use CodeIgniter\HTTP\Request;
 
 class Pages extends BaseController
 {
+    private $db;
+
+    public function __construct()
+    {
+        $this->db = \Config\Database::connect();
+    }
     public function index()
     {
         // CAROUSEL
@@ -28,9 +36,9 @@ class Pages extends BaseController
         $data = [
             'title' => 'dpensiOn || Home'
         ];
-        return view('pages/index', $data);
+        return view('pages/home', $data);
     }
-    public function detail()
+    public function article()
     {
         // DETAIL
         // select from article where id = $request->id join name category join count comment
@@ -44,11 +52,17 @@ class Pages extends BaseController
 
         // RELATED POST
         // select from article order by count comment desc limit 4 join name category join count comment
+        $sql = "select * from t_article where c_active = ?";
+        $query1 = $this->db->query($sql, 1)->getResultArray();
+        $sql = "select * from t_category";
+        $query2 = $this->db->query($sql, 1)->getResultArray();
 
         $data = [
-            'title' => 'dpensiOn || Article'
+            'title' => 'dpensiOn || Article',
+            'data' => $query2,
+            'datarow' => $query1
         ];
-        return view('pages/article/detail', $data);
+        return view('pages/article', $data);
     }
     public function category()
     {
@@ -67,6 +81,22 @@ class Pages extends BaseController
         $data = [
             'title' => 'dpensiOn || Category'
         ];
-        return view('pages/article/category', $data);
+        return view('pages/category', $data);
+    }
+    public function sign_in()
+    {
+        $data = [
+            'title' => 'dpensiOn || Sign In',
+            'bodyStyle' => 'bg-body'
+        ];
+        return view('pages/authentication/sign-in', $data);
+    }
+    public function sign_up()
+    {
+        $data = [
+            'title' => 'dpensiOn || Sign Up',
+            'bodyStyle' => 'bg-body'
+        ];
+        return view('pages/authentication/sign-up', $data);
     }
 }

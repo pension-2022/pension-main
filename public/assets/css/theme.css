@@ -230,7 +230,7 @@ img.pull-left {
 }
 
 .bg-1 {
-  background-color: #ff9838 !important;
+  background-color: #ed6809 !important;
 }
 
 .bg-2 {
@@ -1992,7 +1992,7 @@ img.pull-left {
 }
 
 .sidebar-nav__list>li>a:hover {
-  color: #02b300;
+  color: #00529c;
 }
 
 .sidebar-nav__list>li .dropdown-menu a {
@@ -2301,7 +2301,6 @@ img.pull-left {
 }
 
 .section-title {
-  background-image: url('../media/content/page-title/1.jpg');
   background-size: cover;
 }
 
