@@ -9,80 +9,270 @@ use CodeIgniter\HTTP\Request;
 class Pages extends BaseController
 {
     private $db;
+    private $ionAuth;
+    private $session; 
+    private $privilege;
 
     public function __construct()
     {
+        $this->ionAuth = new \IonAuth\Libraries\IonAuth();
         $this->db = \Config\Database::connect();
+        $this->session = \Config\Services::session();
+        $this->privilege = 0;
     }
     public function index()
     {
-        // CAROUSEL
-        // select from article order by count comment desc limit 3
-
-        // LATEST FROM CATEGORIES
-        // select id, name from category order by date desc limit 4
-
-        // TODAYS NEWS TREND
-        // select from article order by count comment desc limit 6 join count comment
-
-        // BY CATEGORY
-        // select article where id category = first id join count comment
-        // select article where id category = last id join count comment
-        // select id, name from category 
-
-        // READ THE LATEST ARTICLE
-        // select from article order by date desc limit 6 join count comment join name category
+        if ($this->ionAuth->loggedIn())
+        {
+            $this->privilege = 1;
+        } 
+        
+        $sql = "select tc.i_id as id,tc.n_description as deskripsi from t_category tc
+        where tc.c_active = 1 and exists (select ta.i_id from t_article ta
+        where ta.i_categoryid = tc.i_id)
+        order by tc.i_id desc limit 7";
+        $query2 = $this->db->query($sql)->getResultArray();
+        $query1 = $this->db->query("select tc.i_id as id,tc.n_description as deskripsi from t_category tc
+        where tc.c_active = 1 order by tc.i_id desc limit 7")->getResultArray();
+        $sql2 = "select
+                    ta.i_id as id,
+                    ta.n_title as judul,
+                    DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                    tc.n_description as kategori,
+                    (
+                    select
+                        count(*)
+                    from
+                        t_comment tc2
+                    where
+                        tc2.i_articleid = ta.i_id) as jumlahkomen
+                from
+                    t_article ta
+                join t_category tc on
+                    ta.i_categoryid = tc.i_id
+                order by
+                    ta.d_created_date desc
+                limit 6";
+        $queryc = $this->db->query($sql2)->getResultArray();
+        $querylc = $this->db->query("select
+                                        tc.i_id as id,
+                                        tc.n_description as deskripsi
+                                    from
+                                        t_category tc
+                                    where
+                                        tc.c_active = 1
+                                        and exists (
+                                        select
+                                            ta.i_id
+                                        from
+                                            t_article ta
+                                        where
+                                            ta.i_categoryid = tc.i_id)
+                                    order by
+                                        tc.i_id desc
+                                    limit 4")->getResultArray();
+        $queryla = $this->db->query("select
+                                        ta.i_id as id,
+                                        ta.n_title as judul,
+                                        DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                                        tc.n_description as kategori,
+                                        ta.n_description as deskripsi,
+                                        (
+                                        select
+                                            count(*)
+                                        from
+                                            t_comment tc2
+                                        where
+                                            tc2.i_articleid = ta.i_id) as jumlahkomen
+                                    from
+                                        t_article ta
+                                    join t_category tc on
+                                        ta.i_categoryid = tc.i_id
+                                    order by
+                                        ta.d_created_date desc
+                                    limit 6")->getResultArray();
+        $queryfa = $this->db->query("select
+                                        n_description as kategori,
+                                        i_id as id,
+                                        (
+                                        select
+                                            count(*)
+                                        from
+                                            t_article ta
+                                        where
+                                            ta.i_categoryid = tc.i_id and ta.c_active = '1') as artikel
+                                    from
+                                        t_category tc
+                                        order by artikel desc limit 2")->getResultArray();
+        $queryfar = $this->db->query("select
+                                        ta.i_id as id,
+                                        ta.n_title as judul,
+                                        DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                                            tc.n_description as kategori,
+                                            ta.n_description as deskripsi,
+                                            (
+                                            select
+                                                count(*)
+                                            from
+                                                t_comment tc2
+                                            where
+                                                tc2.i_articleid = ta.i_id) as jumlahkomen,
+                                        concat(u.first_name,' ',u.last_name) as author
+                                        from
+                                            t_article ta
+                                        join t_category tc on
+                                            ta.i_categoryid = tc.i_id
+                                        join users u on
+                                            u.id = ta.i_adminid 
+                                        order by
+                                            jumlahkomen, ta.d_created_date desc
+                                        limit 6")->getResultArray();
 
         $data = [
-            'title' => 'dpensiOn || Home'
+            'title' => 'dpensiOn || Home',
+            'navcategory' => $query2,
+            'category' => $query1,
+            'carousel' => $queryc,
+            'latestcategory' => $querylc,
+            'latestarticle' => $queryla,
+            'latestarticles' => $queryla,
+            'favcategory' => $queryfa,
+            'favcategory2' => $queryfa,
+            'favarticle' => $queryfar,
+            'priv' => $this->privilege,
+            'db' => $this->db
         ];
         return view('pages/home', $data);
     }
-    public function article()
+
+    public function category($id)
     {
-        // DETAIL
-        // select from article where id = $request->id join name category join count comment
-        // select from comment where id article = $request->id
-
-        // CATEGORIES
-        // select id, name from category
-
-        // POPULAR NEWS 
-        // select from article order by count comment desc limit 4 join name category join count comment
-
-        // RELATED POST
-        // select from article order by count comment desc limit 4 join name category join count comment
-        $sql = "select * from t_article where c_active = ?";
-        $query1 = $this->db->query($sql, 1)->getResultArray();
-        $sql = "select * from t_category";
-        $query2 = $this->db->query($sql, 1)->getResultArray();
-
+        if ($this->ionAuth->loggedIn())
+        {
+            $this->privilege = 1;
+        } 
+        $sql = "select tc.i_id as id,tc.n_description as deskripsi from t_category tc
+        where tc.c_active = 1 and exists (select ta.i_id from t_article ta
+        where ta.i_categoryid = tc.i_id)
+        order by tc.i_id desc limit 7";
+        $query2 = $this->db->query($sql)->getResultArray();
+        $query1 = $this->db->query("select tc.i_id as id,tc.n_description as deskripsi from t_category tc
+        where tc.c_active = 1 order by tc.i_id desc limit 7")->getResultArray();
+        $sql2 = "select
+                    ta.i_id as id,
+                    ta.n_title as judul,
+                    DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                    tc.n_description as kategori,
+                    (
+                    select
+                        count(*)
+                    from
+                        t_comment tc2
+                    where
+                        tc2.i_articleid = ta.i_id) as jumlahkomen
+                from
+                    t_article ta
+                join t_category tc on
+                    ta.i_categoryid = tc.i_id
+                order by
+                    ta.d_created_date desc
+                limit 6";
+        $queryc = $this->db->query($sql2)->getResultArray();
+        $querylc = $this->db->query("select
+                                        tc.i_id as id,
+                                        tc.n_description as deskripsi
+                                    from
+                                        t_category tc
+                                    where
+                                        tc.c_active = 1
+                                        and exists (
+                                        select
+                                            ta.i_id
+                                        from
+                                            t_article ta
+                                        where
+                                            ta.i_categoryid = tc.i_id)
+                                    order by
+                                        tc.i_id desc
+                                    limit 4")->getResultArray();
+        $queryla = $this->db->query("select
+                                        ta.i_id as id,
+                                        ta.n_title as judul,
+                                        DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                                        tc.n_description as kategori,
+                                        ta.n_description as deskripsi,
+                                        (
+                                        select
+                                            count(*)
+                                        from
+                                            t_comment tc2
+                                        where
+                                            tc2.i_articleid = ta.i_id) as jumlahkomen
+                                    from
+                                        t_article ta
+                                    join t_category tc on
+                                        ta.i_categoryid = tc.i_id
+                                    order by
+                                        ta.d_created_date desc
+                                    limit 6")->getResultArray();
+        $queryfa = $this->db->query("select
+                                        n_description as kategori,
+                                        i_id as id,
+                                        (
+                                        select
+                                            count(*)
+                                        from
+                                            t_article ta
+                                        where
+                                            ta.i_categoryid = tc.i_id and ta.c_active = '1') as artikel
+                                    from
+                                        t_category tc
+                                        order by artikel desc limit 2")->getResultArray();
+        $queryfar = $this->db->query("select
+                                        ta.i_id as id,
+                                        ta.n_title as judul,
+                                        DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                                            tc.n_description as kategori,
+                                            ta.n_description as deskripsi,
+                                            (
+                                            select
+                                                count(*)
+                                            from
+                                                t_comment tc2
+                                            where
+                                                tc2.i_articleid = ta.i_id) as jumlahkomen,
+                                        concat(u.first_name,' ',u.last_name) as author
+                                        from
+                                            t_article ta
+                                        join t_category tc on
+                                            ta.i_categoryid = tc.i_id
+                                        join users u on
+                                            u.id = ta.i_adminid 
+                                        order by
+                                            jumlahkomen, ta.d_created_date desc
+                                        limit 6")->getResultArray();    
+        $getCategory = $this->db->query("select * from t_category where i_id = ?", $id)->getResultArray();                                
         $data = [
-            'title' => 'dpensiOn || Article',
-            'data' => $query2,
-            'datarow' => $query1
-        ];
-        return view('pages/article', $data);
-    }
-    public function category()
-    {
-        // CAROUSEL
-        // select from article where id category = $requset->id order by count comment desc join comment count
-
-        // DETAIL
-        // select from article where id category = $requset->id order by date desc join name category join comment count
-
-        // CATEGORIES
-        // select id, name from category
-
-        // POPULAR NEWS 
-        // select from article order by count comment desc limit 4 join name category join count comment
-
-        $data = [
-            'title' => 'dpensiOn || Category'
+            'title' => 'dpensiOn || Category',
+            'navcategory' => $query2,
+            'category' => $query1,
+            'carousel' => $queryc,
+            'latestcategory' => $querylc,
+            'latestarticle' => $queryla,
+            'latestarticles' => $queryla,
+            'favcategory' => $queryfa,
+            'favcategory2' => $queryfa,
+            'favarticle' => $queryfar,
+            'favarticle2' => $queryfar,
+            'mainCategory'=> $getCategory,
+            'priv' => $this->privilege,
+            'db' => $this->db
         ];
         return view('pages/category', $data);
     }
+
+
+
     public function sign_in()
     {
         $data = [

@@ -9,7 +9,7 @@
             </a>
         </li>
         <li>
-            <a href="<?= site_url(); ?>/category">
+            <a>
                 Kategori
             </a>
             <ul class="dropdown-menu">

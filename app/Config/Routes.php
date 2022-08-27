@@ -38,33 +38,62 @@ $routes->set404Override();
 $pages = [
     // Begin Home
     [
+        'method' => 'get',
         'link' => '/',
         'controller' => 'Pages::index'
     ],
     // Begin Detail
     [
-        'link' => '/article',
-        'controller' => 'Pages::article'
+        'method' => 'get',
+        'link' => '/article/(:any)',
+        'controller' => 'Article::article/$1'
     ],
     // Begin Category
     [
-        'link' => '/category',
-        'controller' => 'Pages::category'
+        'method' => 'get',
+        'link' => '/category/(:num)',
+        'controller' => 'Pages::category/$1'
     ],
     // Begin Signin
     [
+        'method' => 'get',
         'link' => '/sign-in',
         'controller' => 'Pages::sign_in'
     ],
     // Begin Signup
     [
+        'method' => 'get',
         'link' => '/sign-up',
         'controller' => 'Pages::sign_up'
     ],
+    // Begin Add Articles
+    [
+        'method' => 'post',
+        'link' => '/register',
+        'controller' => 'PostController::register_users'
+    ],  
+    // Begin Add Articles
+    [
+        'method' => 'post',
+        'link' => '/sign-in',
+        'controller' => 'PostController::login'
+    ],  
+    // Begin Add Articles
+    [
+        'method' => 'post',
+        'link' => '/sign-out',
+        'controller' => 'PostController::logout'
+    ],  
 ];
 
 foreach ($pages as $p) {
-    $routes->get($p['link'], $p['controller']);
+    if ($p['method'] == 'get') {
+        $routes->get($p['link'], $p['controller']);
+    }
+
+    if ($p['method'] == 'post') {
+        $routes->post($p['link'], $p['controller']);
+    }
 }
 
 /*

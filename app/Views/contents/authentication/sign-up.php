@@ -36,7 +36,7 @@
                 <div class="w-lg-600px p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
                     <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form"
-                        action="<?= base_url() ?>/register-author" method="POST">
+                        action="<?= base_url() ?>/register" method="POST">
                         <!--begin::Heading-->
                         <div class="mb-10 text-center d-none">
                             <!--begin::Title-->

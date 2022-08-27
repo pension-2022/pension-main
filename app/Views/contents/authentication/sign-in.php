@@ -37,8 +37,7 @@
                 <div class="w-lg-500px p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
                     <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form"
-                        data-kt-redirect-url="../../demo1/dist/index.html" action="<?= base_url() ?>/sign-in"
-                        method="POST">
+                        data-kt-redirect-url="../../demo1/dist/index.html" action="<?= base_url() ?>/sign-in" method="POST">
                         <!--begin::Heading-->
                         <div class="text-center mb-10">
                             <!--begin::Title-->

@@ -1,4 +1,4 @@
-<?php $category = [
+<?php $categoryx = [
     'Kesehatan',
     'Teknologi',
     'Politik',
@@ -8,5 +8,5 @@
     'Wisata'
 ] ?>
 <?php foreach ($category as $c) : ?>
-<li><a href="<?= site_url(); ?>/category"><?= $c; ?></a></li>
+<li><a href="<?= site_url().'/category/'.$c['id']; ?>"><?= $c['deskripsi']; ?></a></li>
 <?php endforeach ?>

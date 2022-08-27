@@ -41,13 +41,19 @@
                 <!-- <div class="col-md-1"></div> -->
                 <div class="col-md-4">
                     <div class="header-main__links">
-                        <a href="<?= site_url(); ?>" class="header-main__links-item">
+                    <?php if( $priv == 1 ):?>
+                        <a class="header-main__links-item">
+                            <img style="width:50px;height:50px" alt="Logo" src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png" />
+                        </a>
+                    <?php else: ?>
+                        <a href="<?= site_url(); ?>/sign-in" class="header-main__links-item">
                             Masuk
                         </a>
                         atau
-                        <a href="<?= site_url(); ?>" class="header-main__links-item">
+                        <a href="<?= site_url(); ?>/sign-up" class="header-main__links-item">
                             daftar
                         </a>
+                    <?php endif; ?>
                         <a href="#fakelink" class="search-open">
                             <i class="icon pe-7s-search"></i>
                         </a>

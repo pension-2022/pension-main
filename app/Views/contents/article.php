@@ -1,3 +1,22 @@
+<?php $articlesubject = $db->query("select
+	ta.i_id as id,
+	ta.n_title as judul,
+	ta.n_description as deskripsi,
+	ta.n_photo as photo,
+    DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+    tc.n_description as kategori,
+    (select count(*) from t_comment tc2 where tc2.i_articleid = ta.i_id) as jumlahkomen,
+    concat(u.first_name,' ',u.last_name) as author,
+    u.bio as bio
+from
+	t_article ta
+join t_category tc on
+	ta.i_categoryid = tc.i_id
+join users u on
+	ta.i_adminid = u.id
+where
+    LOWER(ta.n_title) like ?", $articleTitle)->getResultArray(); ?>
+<?php foreach ($articlesubject as $articlesubject) : ?>
 <div class="cd-main">
     <div class="wrap-content cd-section cd-selected">
         <?= $this->include('partials/header'); ?>
@@ -7,7 +26,7 @@
                 style="background-image: url('<?= base_url(); ?>/assets/banner.jpg'); background-size: cover; background-position: center center;">
                 <div class="section__inner">
                     <h1 class="ui-title-page">
-                        <?= $datarow[0]['n_title']; ?>
+                    <?= $articlesubject['judul']; ?>
                     </h1>
                 </div>
             </div>
@@ -15,7 +34,7 @@
         <div class="breadcrumb-wrap">
             <ol class="breadcrumb">
                 <li><a href="<?= site_url(); ?>">Beranda</a></li>
-                <li><a href="<?= site_url(); ?>/category">Hiburan</a></li>
+                <li><a href="<?= site_url(); ?>/category"><?= $articlesubject['kategori']; ?></a></li>
                 <li class="active">article</li>
             </ol>
         </div>
@@ -25,72 +44,78 @@
                     <div class="col-md-8">
                         <article class="post post-full clearfix">
                             <div class="entry-media"><a
-                                    href="<?= base_url(); ?>/uploads/photos/<?= $datarow[0]['n_photo']; ?>"
+                                    href="<?= base_url(); ?>/uploads/photos/"
                                     class="prettyPhoto"><img
-                                        src="<?= base_url(); ?>/uploads/photos/<?= $datarow[0]['n_photo']; ?>"
+                                        src="<?= base_url(); ?>/assets/media/content/slider-type-a/1.jpg"
                                         alt="Foto" class="img-responsive"></a></div>
                             <div class="entry-main">
-                                <div class="entry-header"><span class="label bg-3">lifestyle</span><span
-                                        class="label bg-5">world</span>
+                                <div class="entry-header"><span class="label bg-3"><?= $articlesubject['kategori']; ?></span>
                                     <h2 class="entry-title"><a href="<?= site_url(); ?>/detail">
-                                            <?= $datarow[0]['n_title']; ?>
+                                    <?= $articlesubject['judul']; ?>
                                         </a></h2>
                                 </div>
                                 <div class="entry-meta"><span class="entry-meta__item">By<a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"> muhammad
-                                            hafid</a></span><span class="entry-meta__item"><a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link">feb 30,
-                                            2016</a></span><span class="entry-meta__item"><i
+                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $articlesubject['author']; ?></a>
+                                            </span><span class="entry-meta__item"><a
+                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $articlesubject['tanggal']; ?></a>
+                                            </span><span class="entry-meta__item"><i
                                             class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                            class="entry-meta__link">23</a></span></div>
+                                            class="entry-meta__link"><?= $articlesubject['jumlahkomen']; ?></a></span></div>
                                 <div class="entry-content">
-                                    <?= $datarow[0]['n_description']; ?>
+                                    <?= $articlesubject['deskripsi']; ?>
                                 </div>
                                 <div class="entry-footer clearfix">
                                     <div class="post-tags"><span class="post-tags__title">kategori :</span><a
-                                            href="<?= site_url(); ?>/category" class="post-tags__link"> Movies</a>
+                                            href="<?= site_url(); ?>/category" class="post-tags__link"> <?= $articlesubject['kategori']; ?></a>
                                     </div>
                                 </div>
                             </div>
                         </article>
                         <article class="author-post clearfix">
                             <div class="author-post__img"><img
-                                    src="<?= base_url(); ?>/assets/media/content/post/author/1.jpg" alt="foto"
+                                    src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png" alt="foto"
                                     class="img-responsive"></div>
                             <div class="author-post__inner">
-                                <h2 class="author-post__title">Authoor:<span class="author-post__name"> samir
-                                        hasman</span></h2>
-                                <div class="author-post__info">Tempor incididunt labore et dolore magna aliqua enimad
-                                    min veniam saquis nostru exercitation ullamco laboris onsequat lorem ipsum dolor
-                                    tasit amet consect elit sed eiusmod incididunt labore et dolore magna aliquipsum.
+                                <h2 class="author-post__title">Authoor:<span class="author-post__name"> <?= $articlesubject['author']; ?></span></h2>
+                                <div class="author-post__info"><?= $articlesubject['bio']; ?>
                                 </div>
                             </div>
                         </article>
                         <section class="section-comment">
-                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">Komentar :<span
-                                    class="comment-title__number"> 4</span></h3>
+                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">Komentar</h3>
                             <div class="decor-left"></div>
                             <ul class="comments-list list-unstyled">
+                            <?php $comments = $db->query("select
+                                                                tc.n_comment,
+                                                                tc.d_date,
+                                                                concat(u.first_name, ' ', u.last_name) as username
+                                                            from
+                                                                t_comment tc
+                                                            join users u on
+                                                                tc.i_userid = u.id
+                                                            where
+                                                                tc.i_articleid = ?
+                                                                and tc.c_active = 1
+                                                                and tc.i_base_commentid = null", $articlesubject['id'] )->getResultArray(); ?>
+                                <?php foreach ($comments as $comments) : ?>
                                 <li>
                                     <article class="comment clearfix">
                                         <div class="avatar-placeholder"><img
-                                                src="<?= base_url(); ?>/assets/media/content/post/reviews/1.jpg"
+                                                src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png"
                                                 alt="avatar" class="img-responsive"></div>
                                         <div class="comment-inner">
                                             <header class="comment-header">
-                                                <cite class="comment-author">don jeans</cite>
-                                                <time datetime="2012-10-27" class="comment-datetime">feb 30, 2016</time>
+                                                <cite class="comment-author"><?= $comments['username']; ?></cite>
+                                                <time datetime="2012-10-27" class="comment-datetime"><?= $comments['d_date']; ?></time>
                                             </header>
                                             <div class="comment-body">
-                                                <p>Lorem ipsum dolor amet consectetur adipisic elit eiusmod tempor
-                                                    incididunt labore dolore magna aliqu enimad min incididunt ut labore
-                                                    et dolore sed.</p>
+                                                <p><?= $comments['n_comment']; ?></p>
                                             </div>
                                             <footer class="comment-footer"><a href="<?= site_url(); ?>"
                                                     class="comment-btn btn btn-default btn-effect">balas</a></footer>
                                         </div>
                                     </article>
-                                    <ul class="children list-unstyled">
+                                    <!-- <ul class="children list-unstyled">
                                         <li>
                                             <article class="comment clearfix">
                                                 <div class="avatar-placeholder"><img
@@ -113,43 +138,16 @@
                                                 </div>
                                             </article>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </li>
-                                <li>
-                                    <article class="comment clearfix">
-                                        <div class="avatar-placeholder"><img
-                                                src="<?= base_url(); ?>/assets/media/content/post/reviews/3.jpg"
-                                                alt="avatar" class="img-responsive"></div>
-                                        <div class="comment-inner">
-                                            <header class="comment-header">
-                                                <cite class="comment-author">suzain liza</cite>
-                                                <time datetime="2012-10-27" class="comment-datetime">feb 30, 2016</time>
-                                            </header>
-                                            <div class="comment-body">
-                                                <p>Lorem ipsum dolor amet consectetur adipisic elit eiusmod tempor
-                                                    incididunt labore dolore magna aliqu enimad min incididunt ut labore
-                                                    et dolore sed.</p>
-                                            </div>
-                                            <footer class="comment-footer"><a href="<?= site_url(); ?>"
-                                                    class="comment-btn btn btn-default btn-effect">balas</a></footer>
-                                        </div>
-                                    </article>
-                                </li>
+                                <?php endforeach ;?>
                             </ul>
                         </section>
                         <section class="section-reply-form">
-                            <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">komentar</h3>
-                            <div class="decor-left"></div>
                             <form action="#" method="post" class="form-reply ui-form">
                                 <div class="row">
-                                    <div class="col-md-6">
-                                        <input type="text" placeholder="nama" class="form-control">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="email" placeholder="email" class="form-control">
-                                    </div>
                                     <div class="col-xs-12">
-                                        <textarea rows="5" placeholder="deskripsi" class="form-control"></textarea>
+                                        <textarea rows="5" placeholder="Komentar" class="form-control"></textarea>
                                         <button class="ui-form__btn btn btn-xs btn-info btn-effect">kirim</button>
                                     </div>
                                 </div>
@@ -273,3 +271,4 @@
         <!-- end wrap-content-->
     </div>
 </div>
+<?php endforeach ;?>
