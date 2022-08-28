@@ -71,19 +71,25 @@ $pages = [
         'method' => 'post',
         'link' => '/register',
         'controller' => 'PostController::register_users'
-    ],  
+    ],
     // Begin Add Articles
     [
         'method' => 'post',
         'link' => '/sign-in',
         'controller' => 'PostController::login'
-    ],  
+    ],
     // Begin Add Articles
     [
         'method' => 'post',
         'link' => '/sign-out',
         'controller' => 'PostController::logout'
-    ],  
+    ],
+    // Begin Edit Profile
+    [
+        'method' => 'get',
+        'link' => '/edit-profile',
+        'controller' => 'Pages::edit_profile'
+    ],
 ];
 
 foreach ($pages as $p) {

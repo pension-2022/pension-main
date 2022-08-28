@@ -291,4 +291,9 @@ class Pages extends BaseController
         ];
         return view('pages/authentication/sign-up', $data);
     }
+
+    public function edit_profile()
+    {
+        return view('pages/edit-profile');
+    }
 }
