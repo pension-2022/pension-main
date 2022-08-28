@@ -1,5 +1,6 @@
 <?php $articlesubject = $db->query("select
 	ta.i_id as id,
+	ta.i_categoryid as idKategori,
 	ta.n_title as judul,
 	ta.n_description as deskripsi,
 	ta.n_photo as photo,
@@ -76,7 +77,7 @@ where
                                     src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png" alt="foto"
                                     class="img-responsive"></div>
                             <div class="author-post__inner">
-                                <h2 class="author-post__title">Authoor:<span class="author-post__name"> <?= $articlesubject['author']; ?></span></h2>
+                                <h2 class="author-post__title">Author:<span class="author-post__name"> <?= $articlesubject['author']; ?></span></h2>
                                 <div class="author-post__info"><?= $articlesubject['bio']; ?>
                                 </div>
                             </div>
@@ -96,7 +97,7 @@ where
                                                             where
                                                                 tc.i_articleid = ?
                                                                 and tc.c_active = 1
-                                                                and tc.i_base_commentid = null", $articlesubject['id'] )->getResultArray(); ?>
+                                                                and tc.i_base_commentid is null", $articlesubject['id'] )->getResultArray(); ?>
                                 <?php foreach ($comments as $comments) : ?>
                                 <li>
                                     <article class="comment clearfix">
@@ -144,11 +145,12 @@ where
                             </ul>
                         </section>
                         <section class="section-reply-form">
-                            <form action="#" method="post" class="form-reply ui-form">
+                            <form action="javascript:void(0)" id="frm-add-user">
+                            <?= csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <textarea rows="5" placeholder="Komentar" class="form-control"></textarea>
-                                        <button class="ui-form__btn btn btn-xs btn-info btn-effect">kirim</button>
+                                        <textarea rows="5" placeholder="Komentar" id="comment" required name="comment" class="form-control"></textarea>
+                                        <button class="ui-form__btn btn btn-xs btn-info btn-effect" type="submit" onclick="uploadComment(<?= $articlesubject['id']; ?>)">kirim</button>
                                     </div>
                                 </div>
                             </form>
@@ -183,85 +185,36 @@ where
                     <div class="section-default">
                         <h2 class="ui-title-block ui-title-block_border"><span class="text-uppercase">Artikel
                                 Terkait</span></h2>
+                        <?php $artikelterkait = $db->query("select ta.i_id as id, ta.n_title as judul,ta.n_photo as photo, 
+                            (select count(*) from t_comment tc2 where tc2.i_articleid = ta.i_id) as jumlahkomen,
+                            tc.n_description as kategori,
+                            DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
+                            ta.n_description as deskripsi,
+                            concat(u.first_name,' ',u.last_name) as author
+                            from t_article ta join t_category tc on 
+                            ta.i_categoryid = tc.i_id join users u on u.id = ta.i_adminid 
+                            where ta.i_categoryid = ? and ta.c_active = 1 and ta.i_id !=".$articlesubject['id']." order by ta.i_id desc limit 6",$articlesubject['idKategori'])->getResultArray(); ?>
                         <div data-min480="1" data-min768="2" data-min992="2" data-min1200="3" data-pagination="false"
                             data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
                             class="owl-carousel owl-theme owl-theme_mod-e enable-owl-carousel">
+                            <?php foreach ($artikelterkait as $artikelterkait) : ?>
                             <article class="post post-2 post-2_mod-h clearfix">
                                 <div class="entry-media"><a
                                         href="<?= base_url(); ?>/assets/media/content/post/360x300/1.jpg"
                                         class="prettyPhoto"><img
                                             src="<?= base_url(); ?>/assets/media/content/post/360x300/1.jpg" alt="Foto"
-                                            class="img-responsive" /></a><span class="label bg-1">politics</span>
+                                            class="img-responsive" /></a><span class="label bg-1"><?= $artikelterkait['kategori']; ?></span>
                                 </div>
                                 <div class="entry-main">
                                     <div class="entry-header">
-                                        <h2 class="entry-title text-uppercase">Lorem ipsum dolor amt elit sed tempor
-                                            incidunt</h2>
+                                        <h2 class="entry-title text-uppercase"><?= $artikelterkait['judul']; ?></h2>
                                     </div>
                                     <div class="entry-meta"><span class="entry-meta__item">By<a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $artikelterkait['author']; ?></a></span><span class="entry-meta__item"><a
+                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $artikelterkait['tanggal']; ?></a></span><?= $this->include('components/comment-count'); ?></div>
                                 </div>
                             </article>
-                            <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a
-                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg"
-                                        class="prettyPhoto"><img
-                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg" alt="Foto"
-                                            class="img-responsive" /></a><span class="label bg-6">travel</span>
-                                </div>
-                                <div class="entry-main">
-                                    <div class="entry-header">
-                                        <h2 class="entry-title text-uppercase">nostrud exercitation ullamco laboris nisi
-                                            aliquip</h2>
-                                    </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
-                                </div>
-                            </article>
-                            <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a
-                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/3.jpg"
-                                        class="prettyPhoto"><img
-                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/3.jpg" alt="Foto"
-                                            class="img-responsive" /></a><span class="label bg-2">technology</span>
-                                </div>
-                                <div class="entry-main">
-                                    <div class="entry-header">
-                                        <h2 class="entry-title text-uppercase">sedo eiusmod tempor incidunt ut labore
-                                            dolore</h2>
-                                    </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
-                                </div>
-                            </article>
-                            <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a
-                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg"
-                                        class="prettyPhoto"><img
-                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/2.jpg" alt="Foto"
-                                            class="img-responsive" /></a><span class="label bg-6">travel</span>
-                                </div>
-                                <div class="entry-main">
-                                    <div class="entry-header">
-                                        <h2 class="entry-title text-uppercase">nostrud exercitation ullamco laboris nisi
-                                            aliquip</h2>
-                                    </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"> john
-                                                sina</a></span><span class="entry-meta__item"><a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link">15 mins
-                                                ago</a></span><?= $this->include('components/comment-count'); ?></div>
-                                </div>
-                            </article>
+                            <?php endforeach ;?>
                         </div>
                     </div>
                 </div>
@@ -272,3 +225,32 @@ where
     </div>
 </div>
 <?php endforeach ;?>
+    <script type="text/javascript">
+            function uploadComment(id) {
+
+                // Adding form validation
+                $('#frm-add-user').validate();
+                
+		        var comment = $('#comment').val();
+
+                console.log(comment);
+
+                    $.ajax({
+                        url: "<?= base_url() ?>/new-comment/" + id,
+                        type: "POST",
+                        cache: false,
+                        data:  {
+                            comment : comment
+                        },
+                        dataType: "JSON",
+                        success: function(datas) {
+                            if (datas.success == true) {
+                                window.location.reload();
+                            }
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            window.location.href = '<?= base_url() ?>/sign-in'
+                        }
+                    });
+            };
+        </script>

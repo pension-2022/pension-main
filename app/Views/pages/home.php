@@ -24,4 +24,7 @@
 <script src="<?= base_url(); ?>/assets/plugins/scrollreveal/scrollreveal.js"></script>
 <script src="<?= base_url(); ?>/assets/plugins/classie.js"></script>
 <script src="<?= base_url(); ?>/assets/plugins/switcher/js/dmss.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.2/dist/sweetalert2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script> -->
 <?= $this->endSection(); ?>

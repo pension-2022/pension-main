@@ -109,6 +109,7 @@ class Article extends BaseController
         $queryfar = $this->db->query("select
                                         ta.i_id as id,
                                         ta.n_title as judul,
+                                        ta.n_photo as photo,
                                         DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
                                             tc.n_description as kategori,
                                             ta.n_description as deskripsi,

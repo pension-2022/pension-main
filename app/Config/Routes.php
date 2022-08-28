@@ -83,7 +83,13 @@ $pages = [
         'method' => 'post',
         'link' => '/sign-out',
         'controller' => 'PostController::logout'
-    ],  
+    ],   
+    // Begin Add Articles
+    [
+        'method' => 'post',
+        'link' => '/new-comment/(:num)',
+        'controller' => 'PostController::newcomment/$1'
+    ], 
 ];
 
 foreach ($pages as $p) {
