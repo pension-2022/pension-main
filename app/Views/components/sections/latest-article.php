@@ -16,20 +16,20 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="wrap-posts">
-            <?php foreach ( $favarticle as $favarticle) : ?>
+                <?php foreach ($favarticle as $favarticle) : ?>
                 <article class="post post-2 post-2_mod-e clearfix">
                     <div class="entry-media">
                         <div alt="Foto" class="img-responsive"
-                            style="width: 100%; height: 200px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/assets/article-dummy-1.jpeg);">
+                            style="width: 100%; height: 200px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $favarticle['photo']; ?>">
                         </div>
                         <span class="label bg-2">
-                        <?= $favarticle['kategori']; ?>
+                            <?= $favarticle['kategori']; ?>
                         </span>
                     </div>
                     <div class="entry-main">
                         <div class="entry-header">
                             <h2 class="entry-title text-uppercase">
-                            <?= $favarticle['judul']; ?>
+                                <?= $favarticle['judul']; ?>
                             </h2>
                         </div>
                         <div class="entry-meta">
@@ -38,7 +38,7 @@
                                 </a>
                             </span>
                             <span class="entry-meta__item">
-                            <?= $favarticle['tanggal']; ?>
+                                <?= $favarticle['tanggal']; ?>
                                 </a>
                             </span>
                             <span class="entry-meta__item">
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </article>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

@@ -10,19 +10,18 @@
                 <div class="section__inner">
                     <div id="slider-1" class="slider-pro slider-thumbnails">
                         <div class="sp-slides">
-                        <?php helper('text'); ?>
-                        <?php foreach ( $latestarticle as $latestarticle) : ?>
+                            <?php helper('text'); ?>
+                            <?php foreach ($latestarticle as $latestarticle) : ?>
                             <div class="sp-slide">
                                 <article class="post post-2 post-2_mod-a clearfix">
                                     <div class="entry-media">
                                         <div alt="Foto" class="img-responsive"
-                                            style="width: 640px; height: 320px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/assets/article-dummy-1.jpeg);">
+                                            style="width: 640px; height: 320px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $latestarticle['photo']; ?>);">
                                         </div>
                                     </div>
                                     <div class="entry-main">
                                         <div class="entry-header">
-                                            <h2 class="entry-title text-uppercase"><a
-                                                    href="<?= site_url(); ?>/article">
+                                            <h2 class="entry-title text-uppercase"><a href="<?= site_url(); ?>/article">
                                                     <?= $latestarticle['judul']; ?></a>
                                             </h2>
                                         </div>
@@ -32,24 +31,25 @@
                                             </span>
                                             <span class="entry-meta__item">
                                                 <i class="icon pe-7s-comment"></i>
-                                                <span class="entry-meta__link"><?= $latestarticle['jumlahkomen']; ?></span>
+                                                <span
+                                                    class="entry-meta__link"><?= $latestarticle['jumlahkomen']; ?></span>
                                             </span>
                                         </div>
-                                        <div class="entry-content">
-                                            <p><?= word_limiter($latestarticle['deskripsi'], 50); ?></p>
+                                        <div class="entry-content" id="description">
+                                            <?= word_limiter($latestarticle['deskripsi']) ?>...
                                         </div>
                                     </div>
                                 </article>
                             </div>
-                        <?php endforeach ?>
+                            <?php endforeach ?>
                         </div>
                         <div class="sp-thumbnails">
-                        <?php foreach ( $latestarticles as $latestarticles) : ?>
+                            <?php foreach ($latestarticles as $latestarticles) : ?>
                             <div class="sp-thumbnail">
                                 <article class="post post-2 post-2_mod-b clearfix">
                                     <div class="entry-media">
                                         <div alt="Foto" class="img-responsive"
-                                            style="width: 180px; height: 110px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/assets/article-dummy-1.jpeg);">
+                                            style="width: 180px; height: 110px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $latestarticles['photo']; ?>);">
                                         </div>
                                     </div>
                                     <div class="entry-main">
@@ -59,13 +59,14 @@
                                         <div class="entry-meta">
                                             <span class="entry-meta__item">
                                                 <i class="icon pe-7s-comment"></i>
-                                                <span class="entry-meta__link"><?= $latestarticles['jumlahkomen']; ?></span>
+                                                <span
+                                                    class="entry-meta__link"><?= $latestarticles['jumlahkomen']; ?></span>
                                             </span>
                                         </div>
                                     </div>
                                 </article>
                             </div>
-                        <?php endforeach ?>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>

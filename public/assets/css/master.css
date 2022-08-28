@@ -17,19 +17,32 @@ Primary use:	News Agency
 
 /* PLUGIN CSS */
 
-@import url('../plugins/bootstrap/bootstrap.css');                /* bootstrap */
-@import url('../plugins/3d-bold-navigation/style.css');          /* sidebar panel */
-@import url('../plugins/bootstrap-select/bootstrap-select.css');   /* select customization-2 */
-@import url('../plugins/slider-pro/slider-pro.css');         /* main slider */
-@import url('../plugins/owl-carousel/owl.carousel.css');              /* other sliders */
-@import url('../plugins/owl-carousel/owl.transitions.css');           /* other sliders */
-@import url('../plugins/owl-carousel/owl.theme.css');                 /* other sliders */
-@import url('../plugins/flexslider/flexslider.css');         /* slider */
-@import url('../plugins/prettyphoto/prettyPhoto.css');            /* modal */
-@import url('../plugins/isotope/isotope.css');                        /* isotope */
-@import url('../plugins/datetimepicker/jquery.datetimepicker.css');          /* calendar */
-@import url('../plugins/news-ticker/css/endlessRiver.css');          /* effects */
-@import url('../plugins/validation/validation-2.2.min.css');          /* validation */
+@import url('../plugins/bootstrap/bootstrap.css');
+/* bootstrap */
+@import url('../plugins/3d-bold-navigation/style.css');
+/* sidebar panel */
+@import url('../plugins/bootstrap-select/bootstrap-select.css');
+/* select customization-2 */
+@import url('../plugins/slider-pro/slider-pro.css');
+/* main slider */
+@import url('../plugins/owl-carousel/owl.carousel.css');
+/* other sliders */
+@import url('../plugins/owl-carousel/owl.transitions.css');
+/* other sliders */
+@import url('../plugins/owl-carousel/owl.theme.css');
+/* other sliders */
+@import url('../plugins/flexslider/flexslider.css');
+/* slider */
+@import url('../plugins/prettyphoto/prettyPhoto.css');
+/* modal */
+@import url('../plugins/isotope/isotope.css');
+/* isotope */
+@import url('../plugins/datetimepicker/jquery.datetimepicker.css');
+/* calendar */
+@import url('../plugins/news-ticker/css/endlessRiver.css');
+/* effects */
+@import url('../plugins/validation/validation-2.2.min.css');
+/* validation */
 
 
 
@@ -38,3 +51,9 @@ Primary use:	News Agency
 @import url('theme.css');
 @import url('color.css');
 @import url('responsive.css');
+
+
+#description p {
+    background-color: transparent !important;
+    color: white !important;
+}

@@ -1,6 +1,7 @@
-<?php foreach ( $carousel as $item) : ?>
+<?php foreach ($carousel as $item) : ?>
 <!-- Slide 1-->
-<div class="sp-slide"><img src="<?= base_url(); ?>/assets/article-dummy-1.jpeg" alt="slider" class="sp-image" />
+<div class="sp-slide"><img src="<?= base_url(); ?>/uploads/photos/<?= $item['photo']; ?>" alt="slider"
+        class="sp-image" />
     <div data-width="100%" data-show-transition="left" data-hide-transition="left" data-show-duration="800"
         data-show-delay="400" data-hide-delay="400" class="sp-layer">
         <h2 class="main-slider__title" style="padding: 0 20%;"><?= $item['judul']; ?></h2>
@@ -12,7 +13,7 @@
     <div data-width="100%" data-show-transition="right" data-hide-transition="left" data-show-duration="800"
         data-show-delay="1200" data-hide-delay="400" class="sp-layer">
         <div class="main-slider-meta"><span class="main-slider-meta__item"><?= $item['tanggal']; ?></span>
-        <span class="main-slider-meta__item"><i class="icon pe-7s-comment"></i><?= $item['jumlahkomen']; ?></span>
+            <span class="main-slider-meta__item"><i class="icon pe-7s-comment"></i><?= $item['jumlahkomen']; ?></span>
         </div>
     </div>
 </div>

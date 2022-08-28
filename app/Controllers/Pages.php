@@ -10,7 +10,7 @@ class Pages extends BaseController
 {
     private $db;
     private $ionAuth;
-    private $session; 
+    private $session;
     private $privilege;
 
     public function __construct()
@@ -22,21 +22,21 @@ class Pages extends BaseController
     }
     public function index()
     {
-        if ($this->ionAuth->loggedIn())
-        {
+        if ($this->ionAuth->loggedIn()) {
             $this->privilege = 1;
-        } 
-        
+        }
+
         $sql = "select tc.i_id as id,tc.n_description as deskripsi from t_category tc
         where tc.c_active = 1 and exists (select ta.i_id from t_article ta
         where ta.i_categoryid = tc.i_id)
         order by tc.i_id desc limit 7";
         $query2 = $this->db->query($sql)->getResultArray();
         $query1 = $this->db->query("select tc.i_id as id,tc.n_description as deskripsi from t_category tc
-        where tc.c_active = 1 order by tc.i_id desc limit 7")->getResultArray();
+        where tc.c_active = 1 order by tc.i_id desc limit 6")->getResultArray();
         $sql2 = "select
                     ta.i_id as id,
                     ta.n_title as judul,
+                    ta.n_photo as photo,
                     DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
                     tc.n_description as kategori,
                     (
@@ -74,6 +74,7 @@ class Pages extends BaseController
         $queryla = $this->db->query("select
                                         ta.i_id as id,
                                         ta.n_title as judul,
+                                        ta.n_photo as photo,
                                         DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
                                         tc.n_description as kategori,
                                         ta.n_description as deskripsi,
@@ -106,6 +107,7 @@ class Pages extends BaseController
                                         order by artikel desc limit 2")->getResultArray();
         $queryfar = $this->db->query("select
                                         ta.i_id as id,
+                                        ta.n_photo as photo,
                                         ta.n_title as judul,
                                         DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
                                             tc.n_description as kategori,
@@ -147,10 +149,9 @@ class Pages extends BaseController
 
     public function category($id)
     {
-        if ($this->ionAuth->loggedIn())
-        {
+        if ($this->ionAuth->loggedIn()) {
             $this->privilege = 1;
-        } 
+        }
         $sql = "select tc.i_id as id,tc.n_description as deskripsi from t_category tc
         where tc.c_active = 1 and exists (select ta.i_id from t_article ta
         where ta.i_categoryid = tc.i_id)
@@ -231,6 +232,7 @@ class Pages extends BaseController
         $queryfar = $this->db->query("select
                                         ta.i_id as id,
                                         ta.n_title as judul,
+                                        ta.n_photo as photo,
                                         DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
                                             tc.n_description as kategori,
                                             ta.n_description as deskripsi,
@@ -250,8 +252,8 @@ class Pages extends BaseController
                                             u.id = ta.i_adminid 
                                         order by
                                             jumlahkomen, ta.d_created_date desc
-                                        limit 6")->getResultArray();    
-        $getCategory = $this->db->query("select * from t_category where i_id = ?", $id)->getResultArray();                                
+                                        limit 6")->getResultArray();
+        $getCategory = $this->db->query("select * from t_category where i_id = ?", $id)->getResultArray();
         $data = [
             'title' => 'dpensiOn || Category',
             'navcategory' => $query2,
@@ -264,7 +266,7 @@ class Pages extends BaseController
             'favcategory2' => $queryfa,
             'favarticle' => $queryfar,
             'favarticle2' => $queryfar,
-            'mainCategory'=> $getCategory,
+            'mainCategory' => $getCategory,
             'priv' => $this->privilege,
             'db' => $this->db
         ];

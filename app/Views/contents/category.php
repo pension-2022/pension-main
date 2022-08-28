@@ -1,4 +1,3 @@
-
 <?php foreach ($mainCategory as $mainCategory) : ?>
 <div class="cd-main">
     <div class="wrap-content cd-section cd-selected">
@@ -37,16 +36,18 @@
                             where ta.i_categoryid = ? and ta.c_active = 1 order by ta.i_id desc limit 5", $mainCategory['i_id'])->getResultArray(); ?>
                             <?php foreach ($articleslider as $articleslider) : ?>
                             <div class="slider-type-a__item"><img
-                                    src="<?= base_url(); ?>/assets/media/content/slider-type-a/1.jpg" alt="foto"
+                                    src="<?= base_url(); ?>/uploads/photos/<?= $articleslider['photo']; ?>" alt="foto"
                                     class="slider-type-a__img">
                                 <div class="slider-type-a__inner">
                                     <div class="slider-type-a__title"><?= $articleslider['judul']; ?></div>
-                                    <div class="slider-type-a__footer"><span class="slider-type-a__meta"><?= $articleslider['tanggal']; ?>
-                                </span><span class="slider-type-a__meta"><i
-                                                class="icon pe-7s-comment"></i><?= $articleslider['jumlahkomen']; ?></span></div>
+                                    <div class="slider-type-a__footer"><span
+                                            class="slider-type-a__meta"><?= $articleslider['tanggal']; ?>
+                                        </span><span class="slider-type-a__meta"><i
+                                                class="icon pe-7s-comment"></i><?= $articleslider['jumlahkomen']; ?></span>
+                                    </div>
                                 </div>
                             </div>
-                            <?php endforeach ;?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -56,7 +57,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                    <?php $articleofcategory = $db->query("select ta.i_id as id, ta.n_title as judul,ta.n_photo as photo, 
+                        <?php $articleofcategory = $db->query("select ta.i_id as id, ta.n_title as judul,ta.n_photo as photo, 
                         (select count(*) from t_comment tc2 where tc2.i_articleid = ta.i_id) as jumlahkomen,
                         tc.n_description as kategori,
                         DATE_FORMAT(ta.d_created_date , '%M %d, %Y') as tanggal,
@@ -69,33 +70,36 @@
                         <?php foreach ($articleofcategory as $articleofcategory) : ?>
                         <article class="post post-5 clearfix">
                             <div class="entry-media"><a
-                                    href="<?= base_url(); ?>/assets/media/content/post/340x310/1.jpg"
+                                    href="<?= base_url(); ?>/uploads/photos/<?= $articleofcategory['photo']; ?>"
                                     class="prettyPhoto"><img
-                                        src="<?= base_url(); ?>/assets/media/content/post/340x310/1.jpg" alt="Foto"
-                                        class="img-responsive" /></a></div>
+                                        src="<?= base_url(); ?>/uploads/photos/<?= $articleofcategory['photo']; ?>"
+                                        alt="Foto" class="img-responsive" /></a></div>
                             <div class="entry-main">
                                 <div class="entry-header"><span class="category color-4">entertainment</span>
-                                    <h2 class="entry-title"><a href="<?= site_url(); ?>/article/<?= strtolower($articleofcategory['judul']); ?>"><?= $articleofcategory['judul']; ?></a></h2>
+                                    <h2 class="entry-title"><a
+                                            href="<?= site_url(); ?>/article/<?= strtolower($articleofcategory['judul']); ?>"><?= $articleofcategory['judul']; ?></a>
+                                    </h2>
                                 </div>
                                 <div class="entry-meta"><span class="entry-meta__item">By<a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"> <?= $articleofcategory['author']; ?>
-                                            </a></span><span class="entry-meta__item"><a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $articleofcategory['tanggal']; ?>
-                                            </a></span>
-                                            <span class="entry-meta__item">
-                                                <i class="icon pe-7s-comment"></i>
-                                                <span class="entry-meta__link"><?= $articleofcategory['jumlahkomen']; ?></span>
-                                            </span>
-                                <div class="entry-content">
-                                    <p>
-                                        <?= word_limiter($articleofcategory['deskripsi'], 50); ?>
-                                    </p>
+                                            href="<?= site_url(); ?>/detail" class="entry-meta__link">
+                                            <?= $articleofcategory['author']; ?>
+                                        </a></span><span class="entry-meta__item"><a href="<?= site_url(); ?>/detail"
+                                            class="entry-meta__link"><?= $articleofcategory['tanggal']; ?>
+                                        </a></span>
+                                    <span class="entry-meta__item">
+                                        <i class="icon pe-7s-comment"></i>
+                                        <span class="entry-meta__link"><?= $articleofcategory['jumlahkomen']; ?></span>
+                                    </span>
+                                    <div class="entry-content">
+                                        <p>
+                                            <?= word_limiter($articleofcategory['deskripsi'], 50); ?>
+                                        </p>
+                                    </div>
+                                    <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
+                                            lebih lanjut</a></div>
                                 </div>
-                                <div class="entry-footer"><a href="<?= site_url(); ?>/detail" class="btn-link">baca
-                                        lebih lanjut</a></div>
-                            </div>
                         </article>
-                        <?php endforeach ;?>
+                        <?php endforeach; ?>
                         <div class="wrap-pagination">
                             <ul class="pagination">
                                 <li><a href="#">
@@ -122,9 +126,9 @@
                                     </div>
                                 </form>
                             </div>
-                            <section class="widget">
+                            <!-- <section class="widget">
                                 <?= $this->include('partials/follow-us'); ?>
-                            </section>
+                            </section> -->
                             <section class="widget">
                                 <?= $this->include('partials/categories'); ?>
                             </section>

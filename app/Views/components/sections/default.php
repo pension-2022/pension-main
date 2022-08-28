@@ -2,14 +2,15 @@
     <div class="row">
         <div class="col-md-8">
             <div class="row">
-            <?php foreach ( $favcategory as $favcategory) : ?>
+                <?php foreach ($favcategory as $favcategory) : ?>
                 <div class="col-md-6 wow">
                     <div class="title-category clearfix">
-                        <h2 class="title-category__title ui-title-inner color-<?= ($favcategory['artikel']%2 == 0) ? '1' : '5' ?>">
+                        <h2
+                            class="title-category__title ui-title-inner color-<?= ($favcategory['artikel'] % 2 == 0) ? '1' : '5' ?>">
                             <?= $favcategory['kategori']; ?>
                         </h2>
                     </div>
-                    <div class="decor-right bg-<?= ($favcategory['artikel']%2 == 0) ? '3' : '5' ?>"></div>
+                    <div class="decor-right bg-<?= ($favcategory['artikel'] % 2 == 0) ? '3' : '5' ?>"></div>
                     <?php $articledetail = $db->query("select ta.i_id as id, ta.n_title as judul,ta.n_photo as photo, 
                         (select count(*) from t_comment tc2 where tc2.i_articleid = ta.i_id) as jumlahkomen,
                         tc.n_description as kategori,
@@ -26,13 +27,13 @@
                         <a href="<?= site_url(); ?>/article">
                             <div class="entry-media">
                                 <div class="img-responsive"
-                                    style="width: 100%; height: 240px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/assets/article-dummy-1.jpeg);">
+                                    style="width: 100%; height: 240px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $articledetail['photo']; ?>);">
                                 </div>
                             </div>
                             <div class="entry-main">
                                 <div class="entry-header">
                                     <h2 class="entry-title text-uppercase">
-                                            <?= $articledetail['judul']; ?>
+                                        <?= $articledetail['judul']; ?>
                                     </h2>
                                 </div>
                                 <div class="entry-meta">
@@ -40,7 +41,7 @@
                                         By <?= $articledetail['author']; ?>
                                     </span>
                                     <span class="entry-meta__item">
-                                    <?= $articledetail['tanggal']; ?>
+                                        <?= $articledetail['tanggal']; ?>
                                     </span>
                                     <span class="entry-meta__item">
                                         <i class="icon pe-7s-comment"></i>
@@ -49,7 +50,7 @@
                                 </div>
                                 <div class="entry-content">
                                     <p style="color: #999999;">
-                                    <?= word_limiter($articledetail['deskripsi'], 50); ?>
+                                        <?= word_limiter($articledetail['deskripsi']); ?>...
                                     </p>
                                 </div>
                                 <div class="entry-footer">
@@ -60,12 +61,12 @@
                             </div>
                         </a>
                     </article>
-                <?php endforeach ;?>
+                    <?php endforeach; ?>
                 </div>
                 <?php endforeach ?>
             </div>
             <div class="row">
-                <?php foreach ( $favcategory2 as $favcategory2) : ?>
+                <?php foreach ($favcategory2 as $favcategory2) : ?>
                 <?php $articledetail2 = $db->query("select ta.i_id as id, ta.n_title as judul,ta.n_photo as photo, 
                     (select count(*) from t_comment tc2 where tc2.i_articleid = ta.i_id) as jumlahkomen,
                     tc.n_description as kategori,
@@ -77,22 +78,23 @@
                     where ta.i_categoryid = ? order by ta.i_id desc 
                     limit 3", $favcategory2['id'])->getResultArray(); ?>
                 <div class="col-md-6 wow">
-                <?php foreach ($articledetail2 as $articledetail2) : ?>
+                    <?php foreach ($articledetail2 as $articledetail2) : ?>
                     <article class="post post-3 post-3_mod-c clearfix">
                         <a href="<?= site_url(); ?>/article">
                             <div class="entry-media">
                                 <div class="img-responsive"
-                                    style="width: 100%; height: 100px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/assets/article-dummy-1.jpeg);">
+                                    style="width: 100%; height: 100px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $articledetail2['photo']; ?>);">
                                 </div>
                             </div>
                             <div class="entry-main">
                                 <div class="entry-header">
                                     <h2 class="entry-title text-uppercase">
-                                            <?= $articledetail2['judul']; ?>
+                                        <?= $articledetail2['judul']; ?>
                                     </h2>
                                 </div>
-                                <div class="entry-meta"><span class="category color-<?= ($favcategory2['artikel']%2 == 0) ? '1' : '5' ?>">
-                                            <?= $favcategory2['kategori']; ?>
+                                <div class="entry-meta"><span
+                                        class="category color-<?= ($favcategory2['artikel'] % 2 == 0) ? '1' : '5' ?>">
+                                        <?= $favcategory2['kategori']; ?>
                                     </span>
                                     <span class="entry-meta__item">
                                         <i class="icon pe-7s-comment"></i>
@@ -102,7 +104,7 @@
                             </div>
                         </a>
                     </article>
-                <?php endforeach ?>
+                    <?php endforeach ?>
                 </div>
                 <?php endforeach ?>
             </div>
