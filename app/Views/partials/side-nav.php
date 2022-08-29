@@ -6,3 +6,15 @@
         </ul>
     </nav>
 </nav>
+
+<!-- <nav id="cd-nav-2" class="cd-nav-container"><a href="#0" class="cd-close-nav">Close</a>
+    <nav class="sidebar-nav">
+        <ul class="sidebar-nav__list list-unstyled">
+            <li>
+                <a >
+                    Edit Profile
+                </a>
+            </li>
+        </ul>
+    </nav>
+</nav> -->

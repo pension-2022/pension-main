@@ -39,8 +39,8 @@
                 <div class="col-md-4">
                     <div class="header-main__links">
                         <?php if ($priv == 1) : ?>
-                        <a class="header-main__links-item">
-                            <img style="width:50px;height:50px" alt="Logo"
+                        <a href="<?= site_url(); ?>/edit-profile">
+                            <img style="width:30px;height:30px" alt="Logo"
                                 src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png" />
                         </a>
                         <?php else : ?>

@@ -17,6 +17,11 @@
             </ul>
         </li>
         <li>
+            <a href="<?= site_url(); ?>/edit-profile">
+                Ubah Profil
+            </a>
+        </li>
+        <li>
             <a href="<?= site_url(); ?>/about">
                 Tentang Kami
             </a>

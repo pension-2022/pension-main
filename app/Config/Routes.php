@@ -71,13 +71,13 @@ $pages = [
         'method' => 'post',
         'link' => '/register',
         'controller' => 'PostController::register_users'
-    ],  
+    ],
     // Begin Add Articles
     [
         'method' => 'post',
         'link' => '/sign-in',
         'controller' => 'PostController::login'
-    ],  
+    ],
     // Begin Add Articles
     [
         'method' => 'post',
@@ -89,7 +89,13 @@ $pages = [
         'method' => 'post',
         'link' => '/new-comment/(:num)',
         'controller' => 'PostController::newcomment/$1'
-    ], 
+    ],
+    // Begin Edit Profile
+    [
+        'method' => 'get',
+        'link' => '/edit-profile',
+        'controller' => 'Pages::edit_profile'
+    ],
 ];
 
 foreach ($pages as $p) {

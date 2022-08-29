@@ -291,4 +291,16 @@ class Pages extends BaseController
         ];
         return view('pages/authentication/sign-up', $data);
     }
+
+    public function edit_profile()
+    {
+        $queryfar = $this->db->query("select * from users u where id = ?", $this->session->get('id_user'))->getResultArray();
+        $data = [
+            'title' => 'dpensiOn || Sign Up',
+            'bodyStyle' => 'bg-body',
+            'datauserdetail' => $queryfar
+        ];
+
+        return view('pages/edit-profile', $data);
+    }
 }

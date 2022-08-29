@@ -36,7 +36,7 @@
                                             </span>
                                         </div>
                                         <div class="entry-content" id="description">
-                                            <?= word_limiter($latestarticle['deskripsi']) ?>...
+                                            <?= word_limiter($latestarticle['deskripsi'], 50) ?>...
                                         </div>
                                     </div>
                                 </article>
