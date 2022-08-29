@@ -39,7 +39,7 @@
                 <div class="col-md-4">
                     <div class="header-main__links">
                         <?php if ($priv == 1) : ?>
-                        <a class="header-main__links-item" href="<?= site_url(); ?>/edit-profile">
+                        <a href="<?= site_url(); ?>/edit-profile">
                             <img style="width:30px;height:30px" alt="Logo"
                                 src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png" />
                         </a>

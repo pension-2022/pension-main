@@ -78,4 +78,26 @@ class PostController extends BaseController
 
         return $this->respond($response, 200);
     }
+
+    public function newcomment($idArtikel){
+        if (!$this->ionAuth->loggedIn())
+        {
+            return redirect('sign-in');
+        } 
+        
+        $input = [
+            'n_comment' => $this->request->getPost('comment'),
+            'i_articleid' => $idArtikel,
+            'd_date' => Time::now('Asia/Bangkok', 'en_US'),
+            'i_userid' => $this->session->get('id_user'),
+            'c_active' => 1
+        ];
+        $this->db->table('t_comment')->insert($input);
+
+        $response = [
+            'success'   => TRUE
+        ];
+
+        return $this->respond($response, 200);
+    }
 }
