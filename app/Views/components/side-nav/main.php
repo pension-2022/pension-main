@@ -24,3 +24,9 @@
         </li>
     </ul>
 </li>
+
+<?php if ($priv == 1) : ?>
+<li>
+    <a onclick="window(confirm(`are you sure?`))" href="<?= site_url(); ?>/sign-out">Keluar</a>
+</li>
+<?php endif ?>

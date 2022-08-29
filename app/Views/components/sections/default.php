@@ -24,7 +24,7 @@
                     <?php helper('text'); ?>
                     <?php foreach ($articledetail as $articledetail) : ?>
                     <article class="post post-2 post-2_mod-c clearfix">
-                        <a href="<?= site_url(); ?>/article">
+                        <a href="<?= site_url(); ?>/article/<?= strtolower($articledetail['judul']); ?>">
                             <div class="entry-media">
                                 <div class="img-responsive"
                                     style="width: 100%; height: 240px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $articledetail['photo']; ?>);">
@@ -50,11 +50,12 @@
                                 </div>
                                 <div class="entry-content">
                                     <p style="color: #999999;">
-                                        <?= word_limiter($articledetail['deskripsi']); ?>...
+                                        <?= word_limiter($articledetail['deskripsi'], 50); ?>...
                                     </p>
                                 </div>
                                 <div class="entry-footer">
-                                    <a href="<?= site_url(); ?>/article" class="btn-link">
+                                    <a href="<?= site_url(); ?>/article/<?= strtolower($articledetail['judul']); ?>"
+                                        class="btn-link">
                                         Baca Lebih Lanjut
                                     </a>
                                 </div>
@@ -80,7 +81,7 @@
                 <div class="col-md-6 wow">
                     <?php foreach ($articledetail2 as $articledetail2) : ?>
                     <article class="post post-3 post-3_mod-c clearfix">
-                        <a href="<?= site_url(); ?>/article">
+                        <a href="<?= site_url(); ?>/article/<?= strtolower($articledetail2['judul']); ?>">
                             <div class="entry-media">
                                 <div class="img-responsive"
                                     style="width: 100%; height: 100px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $articledetail2['photo']; ?>);">

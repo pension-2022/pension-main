@@ -100,6 +100,8 @@
                                 </div>
                         </article>
                         <?php endforeach; ?>
+                        <div id="data-container"></div>
+                        <div id="pagination-container"></div>
                         <div class="wrap-pagination">
                             <ul class="pagination">
                                 <li><a href="#">
@@ -145,3 +147,24 @@
     </div>
 </div>
 <?php endforeach ?>
+
+<script type="text/template" id="template-demo">
+    <ul>
+    {{#each data}}
+        <li>{{this}}</li>
+    {{/each}}
+    </ul>
+   
+</script>
+
+<script>
+$('#pagination-container').pagination({
+    dataSource: [1, 2, 3, 4, 5, 6, 7],
+    callback: function(data, pagination) {
+        var html = Handlebars.compile($('#template-demo').html(), {
+            data: data
+        });
+        $('#data-container').html(html);
+    }
+})
+</script>

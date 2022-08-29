@@ -25,6 +25,7 @@
     <link href="<?= base_url(); ?>/assets/plugins/switcher/css/color5.css" rel="alternate stylesheet" title="color5"
         media="all" />
     <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/dpbri.ico" />
+    <script src="<?= base_url(); ?>/assets/js/pagination.js"></script>
     <script>
     (function(H) {
         H.className = H.className.replace(/\bno-js\b/, 'js')

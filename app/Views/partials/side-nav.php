@@ -3,6 +3,9 @@
         <ul class="sidebar-nav__list list-unstyled">
             <?= $this->include('components/side-nav/main'); ?>
             <?= $this->include('components/side-nav/category'); ?>
+            <?php if ($priv == 1) : ?>
+            logout
+            <?php endif ?>
         </ul>
     </nav>
 </nav>
