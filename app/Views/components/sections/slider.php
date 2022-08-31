@@ -7,7 +7,8 @@
         <h2 class="main-slider__title" style="padding: 0 20%;"><?= $item['judul']; ?></h2>
     </div>
     <div data-width="100%" data-show-transition="up" data-hide-transition="left" data-show-duration="800"
-        data-show-delay="1700" data-hide-delay="400" class="sp-layer"><a href="blog-1.html"
+        data-show-delay="1700" data-hide-delay="400" class="sp-layer"><a
+            href="<?= site_url(); ?>/article/<?= strtolower($item['judul']); ?>"
             class="main-slider__link bg-1 btn btn-xs btn-effect"><?= $item['kategori']; ?></a>
     </div>
     <div data-width="100%" data-show-transition="right" data-hide-transition="left" data-show-duration="800"

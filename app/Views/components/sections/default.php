@@ -2,15 +2,15 @@
     <div class="row">
         <div class="col-md-8">
             <div class="row">
-                <?php foreach ($favcategory as $favcategory) : ?>
+                <?php $i = 0 ?>
+                <?php foreach ($favcategory as $favcategory) : $i++ ?>
                 <div class="col-md-6 wow">
                     <div class="title-category clearfix">
-                        <h2
-                            class="title-category__title ui-title-inner color-<?= ($favcategory['artikel'] % 2 == 0) ? '1' : '5' ?>">
+                        <h2 class="title-category__title ui-title-inner color-2">
                             <?= $favcategory['kategori']; ?>
                         </h2>
                     </div>
-                    <div class="decor-right bg-<?= ($favcategory['artikel'] % 2 == 0) ? '3' : '5' ?>"></div>
+                    <div class="decor-right bg-2"></div>
                     <?php $articledetail = $db->query("select ta.i_id as id, ta.n_title as judul,ta.n_photo as photo, 
                         (select count(*) from t_comment tc2 where tc2.i_articleid = ta.i_id) as jumlahkomen,
                         tc.n_description as kategori,

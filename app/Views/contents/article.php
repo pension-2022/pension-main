@@ -27,7 +27,7 @@ where
                 style="background-image: url('<?= base_url(); ?>/assets/banner.jpg'); background-size: cover; background-position: center center;">
                 <div class="section__inner">
                     <h1 class="ui-title-page">
-                    <?= $articlesubject['judul']; ?>
+                        <?= $articlesubject['judul']; ?>
                     </h1>
                 </div>
             </div>
@@ -44,30 +44,33 @@ where
                 <div class="row">
                     <div class="col-md-8">
                         <article class="post post-full clearfix">
-                            <div class="entry-media"><a
-                                    href="<?= base_url(); ?>/uploads/photos/"
+                            <div class="entry-media"><a href="<?= base_url(); ?>/uploads/photos/"
                                     class="prettyPhoto"><img
-                                        src="<?= base_url(); ?>/assets/media/content/slider-type-a/1.jpg"
+                                        src="<?= base_url(); ?>/uploads/photos/<?= $articlesubject['photo']; ?>"
                                         alt="Foto" class="img-responsive"></a></div>
                             <div class="entry-main">
-                                <div class="entry-header"><span class="label bg-3"><?= $articlesubject['kategori']; ?></span>
+                                <div class="entry-header"><span
+                                        class="label bg-2"><?= $articlesubject['kategori']; ?></span>
                                     <h2 class="entry-title"><a href="<?= site_url(); ?>/detail">
-                                    <?= $articlesubject['judul']; ?>
+                                            <?= $articlesubject['judul']; ?>
                                         </a></h2>
                                 </div>
                                 <div class="entry-meta"><span class="entry-meta__item">By<a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $articlesubject['author']; ?></a>
-                                            </span><span class="entry-meta__item"><a
-                                            href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $articlesubject['tanggal']; ?></a>
-                                            </span><span class="entry-meta__item"><i
-                                            class="icon pe-7s-comment"></i><a href="<?= site_url(); ?>/detail"
-                                            class="entry-meta__link"><?= $articlesubject['jumlahkomen']; ?></a></span></div>
+                                            href="<?= site_url(); ?>/detail"
+                                            class="entry-meta__link"><?= $articlesubject['author']; ?></a>
+                                    </span><span class="entry-meta__item"><a href="<?= site_url(); ?>/detail"
+                                            class="entry-meta__link"><?= $articlesubject['tanggal']; ?></a>
+                                    </span><span class="entry-meta__item"><i class="icon pe-7s-comment"></i><a
+                                            href="<?= site_url(); ?>/detail"
+                                            class="entry-meta__link"><?= $articlesubject['jumlahkomen']; ?></a></span>
+                                </div>
                                 <div class="entry-content">
                                     <?= $articlesubject['deskripsi']; ?>
                                 </div>
                                 <div class="entry-footer clearfix">
                                     <div class="post-tags"><span class="post-tags__title">kategori :</span><a
-                                            href="<?= site_url(); ?>/category" class="post-tags__link"> <?= $articlesubject['kategori']; ?></a>
+                                            href="<?= site_url(); ?>/category" class="post-tags__link">
+                                            <?= $articlesubject['kategori']; ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +80,8 @@ where
                                     src="<?= base_url(); ?>/assets/assets/media/avatars/blank.png" alt="foto"
                                     class="img-responsive"></div>
                             <div class="author-post__inner">
-                                <h2 class="author-post__title">Author:<span class="author-post__name"> <?= $articlesubject['author']; ?></span></h2>
+                                <h2 class="author-post__title">Author:<span class="author-post__name">
+                                        <?= $articlesubject['author']; ?></span></h2>
                                 <div class="author-post__info"><?= $articlesubject['bio']; ?>
                                 </div>
                             </div>
@@ -86,7 +90,7 @@ where
                             <h3 class="comment-title ui-title-inner ui-title-inner_spacing_sm">Komentar</h3>
                             <div class="decor-left"></div>
                             <ul class="comments-list list-unstyled">
-                            <?php $comments = $db->query("select
+                                <?php $comments = $db->query("select
                                                                 tc.n_comment,
                                                                 tc.d_date,
                                                                 concat(u.first_name, ' ', u.last_name) as username
@@ -97,7 +101,7 @@ where
                                                             where
                                                                 tc.i_articleid = ?
                                                                 and tc.c_active = 1
-                                                                and tc.i_base_commentid is null", $articlesubject['id'] )->getResultArray(); ?>
+                                                                and tc.i_base_commentid is null", $articlesubject['id'])->getResultArray(); ?>
                                 <?php foreach ($comments as $comments) : ?>
                                 <li>
                                     <article class="comment clearfix">
@@ -107,7 +111,8 @@ where
                                         <div class="comment-inner">
                                             <header class="comment-header">
                                                 <cite class="comment-author"><?= $comments['username']; ?></cite>
-                                                <time datetime="2012-10-27" class="comment-datetime"><?= $comments['d_date']; ?></time>
+                                                <time datetime="2012-10-27"
+                                                    class="comment-datetime"><?= $comments['d_date']; ?></time>
                                             </header>
                                             <div class="comment-body">
                                                 <p><?= $comments['n_comment']; ?></p>
@@ -141,16 +146,18 @@ where
                                         </li>
                                     </ul> -->
                                 </li>
-                                <?php endforeach ;?>
+                                <?php endforeach; ?>
                             </ul>
                         </section>
                         <section class="section-reply-form">
                             <form action="javascript:void(0)" id="frm-add-user">
-                            <?= csrf_field(); ?>
+                                <?= csrf_field(); ?>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <textarea rows="5" placeholder="Komentar" id="comment" required name="comment" class="form-control"></textarea>
-                                        <button class="ui-form__btn btn btn-xs btn-info btn-effect" type="submit" onclick="uploadComment(<?= $articlesubject['id']; ?>)">kirim</button>
+                                        <textarea rows="5" placeholder="Komentar" id="comment" required name="comment"
+                                            class="form-control"></textarea>
+                                        <button class="ui-form__btn btn btn-xs btn-info btn-effect" type="submit"
+                                            onclick="uploadComment(<?= $articlesubject['id']; ?>)">kirim</button>
                                     </div>
                                 </div>
                             </form>
@@ -193,28 +200,35 @@ where
                             concat(u.first_name,' ',u.last_name) as author
                             from t_article ta join t_category tc on 
                             ta.i_categoryid = tc.i_id join users u on u.id = ta.i_adminid 
-                            where ta.i_categoryid = ? and ta.c_active = 1 and ta.i_id !=".$articlesubject['id']." order by ta.i_id desc limit 6",$articlesubject['idKategori'])->getResultArray(); ?>
+                            where ta.i_categoryid = ? and ta.c_active = 1 and ta.i_id !=" . $articlesubject['id'] . " order by ta.i_id desc limit 6", $articlesubject['idKategori'])->getResultArray(); ?>
                         <div data-min480="1" data-min768="2" data-min992="2" data-min1200="3" data-pagination="false"
                             data-navigation="true" data-auto-play="4000" data-stop-on-hover="true"
                             class="owl-carousel owl-theme owl-theme_mod-e enable-owl-carousel">
                             <?php foreach ($artikelterkait as $artikelterkait) : ?>
                             <article class="post post-2 post-2_mod-h clearfix">
-                                <div class="entry-media"><a
-                                        href="<?= base_url(); ?>/assets/media/content/post/360x300/1.jpg"
-                                        class="prettyPhoto"><img
-                                            src="<?= base_url(); ?>/assets/media/content/post/360x300/1.jpg" alt="Foto"
-                                            class="img-responsive" /></a><span class="label bg-1"><?= $artikelterkait['kategori']; ?></span>
-                                </div>
-                                <div class="entry-main">
-                                    <div class="entry-header">
-                                        <h2 class="entry-title text-uppercase"><?= $artikelterkait['judul']; ?></h2>
+                                <a href="<?= site_url(); ?>/article/<?= strtolower($artikelterkait['judul']); ?>">
+                                    <div class="entry-media"><img
+                                            src="<?= base_url(); ?>/uploads/photos/<?= $artikelterkait['photo']; ?>"
+                                            alt="Foto" class="img-responsive" /><span
+                                            class="label bg-1"><?= $artikelterkait['kategori']; ?></span>
                                     </div>
-                                    <div class="entry-meta"><span class="entry-meta__item">By<a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $artikelterkait['author']; ?></a></span><span class="entry-meta__item"><a
-                                                href="<?= site_url(); ?>/detail" class="entry-meta__link"><?= $artikelterkait['tanggal']; ?></a></span><?= $this->include('components/comment-count'); ?></div>
-                                </div>
+                                    <div class="entry-main">
+                                        <div class="entry-header">
+                                            <h2 class="entry-title text-uppercase"><?= $artikelterkait['judul']; ?></h2>
+                                        </div>
+                                        <div class="entry-meta">
+                                            <span class="entry-meta__item">
+                                                By <?= $artikelterkait['author']; ?>
+                                            </span>
+                                            <span class="entry-meta__item">
+                                                <?= $artikelterkait['tanggal']; ?>
+                                            </span>
+                                            <?= $this->include('components/comment-count'); ?>
+                                        </div>
+                                    </div>
+                                </a>
                             </article>
-                            <?php endforeach ;?>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -224,33 +238,33 @@ where
         <!-- end wrap-content-->
     </div>
 </div>
-<?php endforeach ;?>
-    <script type="text/javascript">
-            function uploadComment(id) {
+<?php endforeach; ?>
+<script type="text/javascript">
+function uploadComment(id) {
 
-                // Adding form validation
-                $('#frm-add-user').validate();
-                
-		        var comment = $('#comment').val();
+    // Adding form validation
+    $('#frm-add-user').validate();
 
-                console.log(comment);
+    var comment = $('#comment').val();
 
-                    $.ajax({
-                        url: "<?= base_url() ?>/new-comment/" + id,
-                        type: "POST",
-                        cache: false,
-                        data:  {
-                            comment : comment
-                        },
-                        dataType: "JSON",
-                        success: function(datas) {
-                            if (datas.success == true) {
-                                window.location.reload();
-                            }
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            window.location.href = '<?= base_url() ?>/sign-in'
-                        }
-                    });
-            };
-        </script>
+    console.log(comment);
+
+    $.ajax({
+        url: "<?= base_url() ?>/new-comment/" + id,
+        type: "POST",
+        cache: false,
+        data: {
+            comment: comment
+        },
+        dataType: "JSON",
+        success: function(datas) {
+            if (datas.success == true) {
+                window.location.reload();
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            window.location.href = '<?= base_url() ?>/sign-in'
+        }
+    });
+};
+</script>

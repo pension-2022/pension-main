@@ -68,6 +68,7 @@
                         where ta.i_categoryid = ? and ta.c_active = 1 order by ta.i_id desc", $mainCategory['i_id'])->getResultArray(); ?>
                         <?php helper('text'); ?>
                         <?php foreach ($articleofcategory as $articleofcategory) : ?>
+                        <!-- <?= stringify_attributes($articleofcategory); ?> -->
                         <article class="post post-5 clearfix">
                             <div class="entry-media"><a
                                     href="<?= base_url(); ?>/uploads/photos/<?= $articleofcategory['photo']; ?>"
@@ -75,7 +76,8 @@
                                         src="<?= base_url(); ?>/uploads/photos/<?= $articleofcategory['photo']; ?>"
                                         alt="Foto" class="img-responsive" /></a></div>
                             <div class="entry-main">
-                                <div class="entry-header"><span class="category color-4">entertainment</span>
+                                <div class="entry-header"><span
+                                        class="category color-1"><?= $articleofcategory['kategori']; ?></span>
                                     <h2 class="entry-title"><a
                                             href="<?= site_url(); ?>/article/<?= strtolower($articleofcategory['judul']); ?>"><?= $articleofcategory['judul']; ?></a>
                                     </h2>

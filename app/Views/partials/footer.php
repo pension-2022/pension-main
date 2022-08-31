@@ -35,34 +35,53 @@
                             <h3 class="footer__title ui-title-inner">
                                 Kategori
                             </h3>
-                            <div class="decor-right decor-right_sm bg-7"></div>
+                            <div class="decor-right decor-right_sm bg-2"></div>
                             <ul class="footer-list list list-mark-2">
                                 <?= $this->include('components/category-list'); ?>
                             </ul>
                         </section>
                         <section class="footer-section">
-                            <h3 class="footer__title ui-title-inner">our partners</h3>
-                            <div class="decor-right decor-right_sm bg-13"></div>
+                            <h3 class="footer__title ui-title-inner">Layanan Lainnya</h3>
+                            <div class="decor-right decor-right_sm bg-2"></div>
                             <ul class="footer-list list list-mark-2">
-                                <li><a href="<?= site_url(); ?>/category">Abc media</a></li>
-                                <li><a href="<?= site_url(); ?>/category">correspondents</a></li>
-                                <li><a href="<?= site_url(); ?>/category">Advertise with us</a></li>
-                                <li><a href="<?= site_url(); ?>/category">terms & conditions</a></li>
-                                <li><a href="<?= site_url(); ?>/category">work for us</a></li>
-                                <li><a href="<?= site_url(); ?>/category">general inquiries</a></li>
+                                <a href="http://play.google.com/store/apps/articles?id=com.dpbri.dpbri" target="_blank">
+                                    <img src="<?= base_url(); ?>/assets/media/google-playstore.png" alt=""
+                                        style="width: 150px;">
+                                </a>
+                                <br>
+                                <br>
+                                <a href="http://appstoreconnect.apple.com/apps/1508718316/appstore" target="_blank">
+                                    <img src="<?= base_url(); ?>/assets/media/appstore.png" alt=""
+                                        style="width: 150px;">
+                                </a>
                             </ul>
                         </section>
                         <section class="footer-section">
-                            <h3 class="footer__title ui-title-inner">get Connect</h3>
-                            <div class="decor-right decor-right_sm bg-3"></div>
+                            <h3 class="footer__title ui-title-inner">Profil Perusahaan</h3>
+                            <div class="decor-right decor-right_sm bg-2"></div>
                             <ul class="footer-list list list-mark-2">
-                                <li><a href="contacts.html">Contact Us</a></li>
-                                <li><a href="<?= site_url(); ?>/category">Download apps</a></li>
-                                <li><a href="<?= site_url(); ?>/category">podcasts</a></li>
-                                <li><a href="<?= site_url(); ?>/category">newsletter signup</a></li>
-                                <li><a href="<?= site_url(); ?>/category">breaking news alerts</a></li>
+                                <li><a href="<?= site_url(); ?>#">Sejarah Pendirian</a></li>
+                                <li><a href="<?= site_url(); ?>#">Pendiri</a></li>
+                                <li><a href="<?= site_url(); ?>#">Visi dan Misi</a></li>
+                                <li><a href="<?= site_url(); ?>#">Budaya Kerja</a></li>
+                                <li><a href="<?= site_url(); ?>#">Struktur Organisasi</a></li>
+                                <li><a href="<?= site_url(); ?>#">Anak Perusahaan</a></li>
                             </ul>
                         </section>
+                        <!-- <section class="footer-section">
+                            <h3 class="footer__title ui-title-inner">Tentang Dapen BRI</h3>
+                            <div class="decor-right decor-right_sm bg-3"></div>
+                            <ul class="footer-list list list-mark-2">
+                                <div class="footer__info">
+                                    Dana Pensiun BRI merupakan lembaga keuangan berbadan hukum yang didirikan oleh PT.
+                                    Bank Rakyat lndonesia (Persero) Tbk. dengan maksud dan tujuan untuk menyelenggarakan
+                                    Program Pensiun Manfaat Pasti yang bertujuan memelihara kesinambungan penghasilan
+                                    padahari tua para pesertanya, sehingga akan menciptakan ketentraman kerja dan
+                                    meningkatkan motivasi kerja para Pekerja yang merupakan iklim yang kondusif bagi
+                                    peningkatan produktivitas.
+                                </div>
+                            </ul>
+                        </section> -->
                     </div>
                 </div>
             </div>

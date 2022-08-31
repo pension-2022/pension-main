@@ -14,7 +14,7 @@
     <?php foreach ($article as $article) : ?>
     <article class="post post-1 clearfix">
         <div class="entry-media">
-            <a href="<?= site_url(); ?>/article">
+            <a href="<?= site_url(); ?>/article/<?= strtolower($article['judul']); ?>">
                 <div class="img-responsive">
                     <div
                         style="width: 100%; height: 300px; background-size: cover; background-position: center center; background-image: url(<?= base_url(); ?>/uploads/photos/<?= $article['photo']; ?> );">
